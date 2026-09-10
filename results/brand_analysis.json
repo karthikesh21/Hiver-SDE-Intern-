@@ -1,0 +1,47 @@
+{
+  "AmazonHelp": {
+    "sample_size": 1500,
+    "avg_turns_per_convo": 8.65,
+    "avg_customer_msg_words": 15.54,
+    "avg_support_msg_words": 16.52,
+    "unique_customer_vocabulary": 14214,
+    "actionability_rate": 1.045,
+    "intent_breadth": "Very High"
+  },
+  "AppleSupport": {
+    "sample_size": 1500,
+    "avg_turns_per_convo": 3.7,
+    "avg_customer_msg_words": 16.4,
+    "avg_support_msg_words": 19.08,
+    "unique_customer_vocabulary": 6164,
+    "actionability_rate": 0.851,
+    "intent_breadth": "High"
+  },
+  "Uber_Support": {
+    "sample_size": 1500,
+    "avg_turns_per_convo": 3.56,
+    "avg_customer_msg_words": 16.66,
+    "avg_support_msg_words": 18.5,
+    "unique_customer_vocabulary": 6234,
+    "actionability_rate": 0.71,
+    "intent_breadth": "High"
+  },
+  "SpotifyCares": {
+    "sample_size": 1500,
+    "avg_turns_per_convo": 3.84,
+    "avg_customer_msg_words": 15.52,
+    "avg_support_msg_words": 20.44,
+    "unique_customer_vocabulary": 6136,
+    "actionability_rate": 0.623,
+    "intent_breadth": "Moderate"
+  },
+  "Delta": {
+    "sample_size": 1500,
+    "avg_turns_per_convo": 3.45,
+    "avg_customer_msg_words": 16.89,
+    "avg_support_msg_words": 15.59,
+    "unique_customer_vocabulary": 6398,
+    "actionability_rate": 0.357,
+    "intent_breadth": "Moderate"
+  }
+}

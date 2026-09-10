@@ -1,0 +1,731 @@
+{
+  "spearman_correlation": 0.37,
+  "spearman_pvalue": 0.01876535448873897,
+  "pearson_correlation": 0.3263,
+  "mean_absolute_difference": 0.165,
+  "exact_agreement_pct": 7.5,
+  "near_agreement_pct": 95.0,
+  "sample_size": 40,
+  "records": [
+    {
+      "case_id": 1,
+      "intent": "delivery_delay_tracking",
+      "customer_message": "Where is my package? Tracking number 9400111899564726274 says delivered yesterday but I checked everywhere.",
+      "reply": "We apologize for the delay with your delivery. We can take a closer look at the order. When you have time, give us a call. We're avail 24/7 here: the link in Your Orders",
+      "judge_overall": 4.04,
+      "human_overall": 3.8,
+      "absolute_difference": 0.24,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.2,
+        "hallucination": 5.0,
+        "overall": 4.04,
+        "reason": "Reply maintains strong tone (4.2) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 2,
+      "intent": "delivery_delay_tracking",
+      "customer_message": "My order has been stuck in 'Departed Facility' in Memphis for 5 days with no new scan.",
+      "reply": "We apologize for the delay with your delivery. Did we ask you to wait for a certain date before the refund is issued? Was it shipped by Amazon or a third-party seller?",
+      "judge_overall": 4.29,
+      "human_overall": 4.5,
+      "absolute_difference": 0.21,
+      "judge_details": {
+        "correctness": 3.8,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 4.2,
+        "hallucination": 5.0,
+        "overall": 4.29,
+        "reason": "Reply maintains strong tone (4.2) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 3,
+      "intent": "delivery_delay_tracking",
+      "customer_message": "I ordered same day delivery for my medicine and it's 11 PM and nothing has arrived.",
+      "reply": "We apologize for the delay with your delivery. I'm sorry your item is arriving later than expected. We'd like to confirm what's happened here: the link in Your Orders",
+      "judge_overall": 4.29,
+      "human_overall": 4.3,
+      "absolute_difference": 0.01,
+      "judge_details": {
+        "correctness": 3.7,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.29,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 4,
+      "intent": "delivery_delay_tracking",
+      "customer_message": "Can you tell me which carrier is delivering order #112-9982736-2281920?",
+      "reply": "We apologize for the delay with your delivery. Apologies for the delay, Shiva. Please report this to our support team here: the link in Your Orders & we'll look into this.",
+      "judge_overall": 4.28,
+      "human_overall": 4.1,
+      "absolute_difference": 0.18,
+      "judge_details": {
+        "correctness": 3.6,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.28,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 5,
+      "intent": "delivery_delay_tracking",
+      "customer_message": "Tracking shows package handed to resident but I was out of town all week!",
+      "reply": "We apologize for the delay with your delivery. We'd like to look into this with you. Please send us more details about this order here: the link in Your Orders",
+      "judge_overall": 4.16,
+      "human_overall": 4.4,
+      "absolute_difference": 0.24,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.16,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 26,
+      "intent": "refund_return_request",
+      "customer_message": "How do I return a pair of shoes that don't fit? Where do I drop them off?",
+      "reply": "We are glad to assist you with your return or refund. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 4.22,
+      "human_overall": 4.2,
+      "absolute_difference": 0.02,
+      "judge_details": {
+        "correctness": 3.4,
+        "grounding": 3.4,
+        "helpfulness": 4.5,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.22,
+        "reason": "Reply maintains strong tone (4.8) and grounding (3.4) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 27,
+      "intent": "refund_return_request",
+      "customer_message": "I dropped off my return at Whole Foods 3 days ago. When will the refund hit my card?",
+      "reply": "We are glad to assist you with your return or refund. Apologies for the inconvenience. Kindly drop us an email from the link provided above and our team will reach out to you.",
+      "judge_overall": 4.21,
+      "human_overall": 4.0,
+      "absolute_difference": 0.21,
+      "judge_details": {
+        "correctness": 3.4,
+        "grounding": 5.0,
+        "helpfulness": 4.0,
+        "tone": 4.2,
+        "hallucination": 4.5,
+        "overall": 4.21,
+        "reason": "Reply maintains strong tone (4.2) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 28,
+      "intent": "refund_return_request",
+      "customer_message": "Can I return an opened electronic item if I threw away the original outer box?",
+      "reply": "We are glad to assist you with your return or refund. We're happy to help, Julie! When you have a chance, checkout available return options here: the link in Your Orders",
+      "judge_overall": 4.43,
+      "human_overall": 3.8,
+      "absolute_difference": 0.63,
+      "judge_details": {
+        "correctness": 3.3,
+        "grounding": 5.0,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.43,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 29,
+      "intent": "refund_return_request",
+      "customer_message": "I want a full refund for an order that was cancelled by the seller.",
+      "reply": "We are glad to assist you with your return or refund. I'm sorry about the experience, Kanz. Please provide your details here: the link in Your Orders We will look into it.",
+      "judge_overall": 4.32,
+      "human_overall": 4.3,
+      "absolute_difference": 0.02,
+      "judge_details": {
+        "correctness": 3.3,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.32,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 30,
+      "intent": "refund_return_request",
+      "customer_message": "The return window for my textbook closed yesterday, can an exception be made?",
+      "reply": "We are glad to assist you with your return or refund. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 4.21,
+      "human_overall": 4.0,
+      "absolute_difference": 0.21,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 3.8,
+        "helpfulness": 4.5,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.21,
+        "reason": "Reply maintains strong tone (4.8) and grounding (3.8) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 51,
+      "intent": "damaged_defective_item",
+      "customer_message": "I opened the parcel and the ceramic teapot was smashed into dozens of pieces.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 4.2,
+      "human_overall": 4.4,
+      "absolute_difference": 0.2,
+      "judge_details": {
+        "correctness": 3.4,
+        "grounding": 3.8,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.2,
+        "reason": "Reply maintains strong tone (4.8) and grounding (3.8) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 52,
+      "intent": "damaged_defective_item",
+      "customer_message": "The laptop I received powers on but the display has dead vertical colored lines.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 4.1,
+      "human_overall": 4.1,
+      "absolute_difference": 0.0,
+      "judge_details": {
+        "correctness": 3.3,
+        "grounding": 3.4,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.1,
+        "reason": "Reply maintains strong tone (4.8) and grounding (3.4) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 53,
+      "intent": "damaged_defective_item",
+      "customer_message": "I ordered a size Large men's winter coat, but you sent me a toddler's jacket.",
+      "reply": "We apologize for the delay with your delivery. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 4.15,
+      "human_overall": 4.0,
+      "absolute_difference": 0.15,
+      "judge_details": {
+        "correctness": 3.8,
+        "grounding": 3.2,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.15,
+        "reason": "Reply maintains strong tone (4.8) and grounding (3.2) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 54,
+      "intent": "damaged_defective_item",
+      "customer_message": "The seal on the vitamins was completely broken and pills were scattered in the envelope.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 4.09,
+      "human_overall": 4.3,
+      "absolute_difference": 0.21,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 3.7,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.09,
+        "reason": "Reply maintains strong tone (4.8) and grounding (3.7) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 55,
+      "intent": "damaged_defective_item",
+      "customer_message": "One of the four dining chairs in the set arrived with a cracked wooden leg.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 3.92,
+      "human_overall": 3.9,
+      "absolute_difference": 0.02,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 2.8,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 3.92,
+        "reason": "Reply maintains strong tone (4.8) and grounding (2.8) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 76,
+      "intent": "payment_billing_issue",
+      "customer_message": "I was charged twice ($64.99 each) for order #114-8829102 on my Visa card.",
+      "reply": "We understand your concern regarding this charge. Sorry about those charges, Will! Let's see if we can find out where they are coming from: the link in Your Orders",
+      "judge_overall": 4.16,
+      "human_overall": 4.0,
+      "absolute_difference": 0.16,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.16,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 77,
+      "intent": "payment_billing_issue",
+      "customer_message": "My credit card was declined at checkout but my bank confirmed my card has no hold.",
+      "reply": "We understand your concern regarding this charge. I completely understand your disappointment. Kindly contact us here the link in Your Orders and we'll look into it.",
+      "judge_overall": 4.14,
+      "human_overall": 4.3,
+      "absolute_difference": 0.16,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 4.2,
+        "hallucination": 5.0,
+        "overall": 4.14,
+        "reason": "Reply maintains strong tone (4.2) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 78,
+      "intent": "payment_billing_issue",
+      "customer_message": "There is an unauthorized charge of $14.99 from 'Amazon Digital' on my bank statement.",
+      "reply": "We understand your concern regarding this charge. As you've written to our specialist team they'll reach out to you soon. Appreciate your patience and understanding.",
+      "judge_overall": 4.04,
+      "human_overall": 4.0,
+      "absolute_difference": 0.04,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 4.2,
+        "hallucination": 4.5,
+        "overall": 4.04,
+        "reason": "Reply maintains strong tone (4.2) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 79,
+      "intent": "payment_billing_issue",
+      "customer_message": "My $50 Amazon gift card says 'already redeemed to another account' when I enter the claim code.",
+      "reply": "We understand your concern regarding this charge. Sorry about that, May I know if you contacted our support team here: the link in Your Orders",
+      "judge_overall": 4.26,
+      "human_overall": 4.1,
+      "absolute_difference": 0.16,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.26,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 80,
+      "intent": "payment_billing_issue",
+      "customer_message": "How do I update the expiration date and CVV for my default payment method?",
+      "reply": "We understand your concern regarding this charge. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 3.96,
+      "human_overall": 4.2,
+      "absolute_difference": 0.24,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 3.0,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 3.96,
+        "reason": "Reply maintains strong tone (4.8) and grounding (3.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 101,
+      "intent": "account_login_access",
+      "customer_message": "I forgot my Amazon password and the reset email is not arriving in my inbox.",
+      "reply": "We apologize for the trouble accessing your account. Sorry to hear that, can you tell us a bit more without sharing any personal or account info?",
+      "judge_overall": 4.06,
+      "human_overall": 4.1,
+      "absolute_difference": 0.04,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 4.5,
+        "overall": 4.06,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 102,
+      "intent": "account_login_access",
+      "customer_message": "I changed my phone number and now I cannot receive the Two-Factor OTP to sign in.",
+      "reply": "We apologize for the trouble accessing your account. I'm sorry for the trouble with your account! What site do you use with us? Is it the link in Your Orders co.uk or etc.?",
+      "judge_overall": 4.24,
+      "human_overall": 4.0,
+      "absolute_difference": 0.24,
+      "judge_details": {
+        "correctness": 3.4,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.24,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 103,
+      "intent": "account_login_access",
+      "customer_message": "I received an email saying someone logged into my account from a device in Russia.",
+      "reply": "We apologize for the trouble accessing your account. I understand. We don't have access to customer accounts over Twitter. The link ^AM provided does not require sign in.",
+      "judge_overall": 4.13,
+      "human_overall": 4.3,
+      "absolute_difference": 0.17,
+      "judge_details": {
+        "correctness": 3.3,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 4.5,
+        "overall": 4.13,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 104,
+      "intent": "account_login_access",
+      "customer_message": "My account has been put on hold and customer service asked for billing statement upload.",
+      "reply": "We understand your concern regarding this charge. Sorry about the delay with a refund. Could you confirm providing your details as requested here: the link in Your Orders ?",
+      "judge_overall": 4.26,
+      "human_overall": 4.3,
+      "absolute_difference": 0.04,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.26,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 105,
+      "intent": "account_login_access",
+      "customer_message": "How do I enable Two-Step Verification using an Authenticator app like Google Authenticator?",
+      "reply": "We apologize for the trouble accessing your account. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 4.21,
+      "human_overall": 4.0,
+      "absolute_difference": 0.21,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 4.2,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.21,
+        "reason": "Reply maintains strong tone (4.8) and grounding (4.2) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 126,
+      "intent": "subscription_prime_issue",
+      "customer_message": "Why did Amazon charge me $139 for Prime membership when I never authorized renewal?",
+      "reply": "We are happy to clarify your Amazon Prime membership details. Hello Sri, we've responded to your DM.",
+      "judge_overall": 4.0,
+      "human_overall": 4.2,
+      "absolute_difference": 0.2,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 3.5,
+        "hallucination": 5.0,
+        "overall": 4.0,
+        "reason": "Reply maintains strong tone (3.5) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 127,
+      "intent": "subscription_prime_issue",
+      "customer_message": "How do I cancel my Amazon Prime subscription and get a refund for remaining months?",
+      "reply": "We are happy to clarify your Amazon Prime membership details. Hey there, let's follow the steps on here so we can cancel your membership: the link in Your Orders",
+      "judge_overall": 4.1,
+      "human_overall": 4.1,
+      "absolute_difference": 0.0,
+      "judge_details": {
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 3.5,
+        "hallucination": 5.0,
+        "overall": 4.1,
+        "reason": "Reply maintains strong tone (3.5) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 128,
+      "intent": "subscription_prime_issue",
+      "customer_message": "I am a university student, how do I apply for the 50% Prime Student discount?",
+      "reply": "We are happy to clarify your Amazon Prime membership details. You can learn how to switch your Prime account to a Prime Student account here: the link in Your Orders",
+      "judge_overall": 4.05,
+      "human_overall": 3.8,
+      "absolute_difference": 0.25,
+      "judge_details": {
+        "correctness": 3.8,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 3.5,
+        "hallucination": 5.0,
+        "overall": 4.05,
+        "reason": "Reply maintains strong tone (3.5) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 129,
+      "intent": "subscription_prime_issue",
+      "customer_message": "I paid for Amazon Prime but Prime Video says I need to purchase a separate subscription.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. Hi Harry- Is it a Free Trial you signed up for? Have you received an email since opting for Prime?",
+      "judge_overall": 4.05,
+      "human_overall": 4.2,
+      "absolute_difference": 0.15,
+      "judge_details": {
+        "correctness": 3.8,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 3.5,
+        "hallucination": 5.0,
+        "overall": 4.05,
+        "reason": "Reply maintains strong tone (3.5) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 130,
+      "intent": "subscription_prime_issue",
+      "customer_message": "Can I share my Amazon Prime delivery benefits with my spouse without paying extra?",
+      "reply": "We are happy to clarify your Amazon Prime membership details. Thanks for reaching out! Here are the benefits that are shareable through your Amazon Household: the link in Your Orders",
+      "judge_overall": 4.3,
+      "human_overall": 4.3,
+      "absolute_difference": 0.0,
+      "judge_details": {
+        "correctness": 4.5,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 3.5,
+        "hallucination": 5.0,
+        "overall": 4.3,
+        "reason": "Reply maintains strong tone (3.5) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 151,
+      "intent": "product_inquiry_availability",
+      "customer_message": "Will this OtterBox case for iPhone 14 also fit an iPhone 15?",
+      "reply": "Thank you for inquiring about this product. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 4.09,
+      "human_overall": 3.9,
+      "absolute_difference": 0.19,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 4.2,
+        "helpfulness": 4.0,
+        "tone": 4.2,
+        "hallucination": 5.0,
+        "overall": 4.09,
+        "reason": "Reply maintains strong tone (4.2) and grounding (4.2) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 152,
+      "intent": "product_inquiry_availability",
+      "customer_message": "When will the Sony WH-1000XM5 headphones in Silver be restocked?",
+      "reply": "Thank you for inquiring about this product. We'd like to take a look at this with you. Provide your phone number here: the link in Your Orders and select 'Call me now'",
+      "judge_overall": 4.0,
+      "human_overall": 4.2,
+      "absolute_difference": 0.2,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 3.5,
+        "hallucination": 5.0,
+        "overall": 4.0,
+        "reason": "Reply maintains strong tone (3.5) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 153,
+      "intent": "product_inquiry_availability",
+      "customer_message": "Is this product sold directly by Amazon.com or an independent third-party seller?",
+      "reply": "Thank you for inquiring about this product. If the seller doesn't sort this, an A-to-z Guarantee Claim is the best option. This allows us to review the order and seller.",
+      "judge_overall": 3.89,
+      "human_overall": 3.9,
+      "absolute_difference": 0.01,
+      "judge_details": {
+        "correctness": 3.4,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 3.5,
+        "hallucination": 4.5,
+        "overall": 3.89,
+        "reason": "Reply maintains strong tone (3.5) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 154,
+      "intent": "product_inquiry_availability",
+      "customer_message": "What is the exact height and width of this bookshelf assembled?",
+      "reply": "We are very sorry to hear that your item arrived in that condition. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 4.07,
+      "human_overall": 3.9,
+      "absolute_difference": 0.17,
+      "judge_details": {
+        "correctness": 3.8,
+        "grounding": 2.8,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.07,
+        "reason": "Reply maintains strong tone (4.8) and grounding (2.8) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 155,
+      "intent": "product_inquiry_availability",
+      "customer_message": "Does this wireless gaming mouse come with the USB dongle receiver in the box?",
+      "reply": "Thank you for inquiring about this product. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 3.92,
+      "human_overall": 4.1,
+      "absolute_difference": 0.18,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 3.4,
+        "helpfulness": 4.0,
+        "tone": 4.2,
+        "hallucination": 5.0,
+        "overall": 3.92,
+        "reason": "Reply maintains strong tone (4.2) and grounding (3.4) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 176,
+      "intent": "general_complaint_feedback",
+      "customer_message": "Your delivery driver literally threw my box from 15 feet away onto my stone porch!",
+      "reply": "We take your feedback very seriously and apologize for this experience. Hey Esha! My team would like to look into this with you. Please give us more details about this here: the link in Your Orders",
+      "judge_overall": 4.16,
+      "human_overall": 3.6,
+      "absolute_difference": 0.56,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.16,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 177,
+      "intent": "general_complaint_feedback",
+      "customer_message": "I have contacted support 5 times regarding the same issue and received 5 conflicting answers.",
+      "reply": "We apologize for the trouble accessing your account. Please don\u2019t provide order details as we consider them to be personal info. Our Twitter page is visible to public. (2/2)",
+      "judge_overall": 4.06,
+      "human_overall": 3.9,
+      "absolute_difference": 0.16,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 4.5,
+        "overall": 4.06,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 178,
+      "intent": "general_complaint_feedback",
+      "customer_message": "The delivery van backed up over my lawn and destroyed our sprinkler head!",
+      "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry about this, Philippa! That's not how we want our deliveries handled! Please contact us here:the link in Your Orders",
+      "judge_overall": 4.26,
+      "human_overall": 4.5,
+      "absolute_difference": 0.24,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.5,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 4.26,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 179,
+      "intent": "general_complaint_feedback",
+      "customer_message": "An agent on chat was extremely disrespectful and closed the chat window in my face.",
+      "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry to hear that. Could you please tell me your concern so that I can assist you accordingly? (1/2)",
+      "judge_overall": 4.06,
+      "human_overall": 4.1,
+      "absolute_difference": 0.04,
+      "judge_details": {
+        "correctness": 3.0,
+        "grounding": 5.0,
+        "helpfulness": 3.0,
+        "tone": 4.8,
+        "hallucination": 4.5,
+        "overall": 4.06,
+        "reason": "Reply maintains strong tone (4.8) and grounding (5.0) with zero hallucination. Provides actionable self-service guidance."
+      }
+    },
+    {
+      "case_id": 180,
+      "intent": "general_complaint_feedback",
+      "customer_message": "Your company is holding my money hostage for over a month and I am consulting my attorney.",
+      "reply": "We understand your concern regarding this charge. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 3.94,
+      "human_overall": 3.7,
+      "absolute_difference": 0.24,
+      "judge_details": {
+        "correctness": 3.4,
+        "grounding": 2.5,
+        "helpfulness": 4.0,
+        "tone": 4.8,
+        "hallucination": 5.0,
+        "overall": 3.94,
+        "reason": "Reply maintains strong tone (4.8) and grounding (2.5) with zero hallucination. Provides actionable self-service guidance."
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "delivery_delay_tracking": {
+    "description": "Inquiries regarding delayed packages, tracking status, carrier delays, and estimated arrival dates.",
+    "inclusion_criteria": "Mentions where is order, package not arrived, tracking number, carrier status (USPS/UPS/FedEx), delayed shipping.",
+    "exclusion_criteria": "Package was marked delivered but arrived broken (damaged_defective_item) or request for full money back due to delay (refund_return_request).",
+    "typical_resolution": "Check carrier tracking status, provide estimated delivery date window, advise waiting 24-48 hours past carrier ETA, or offer redelivery/replacement.",
+    "examples": [
+      "Where is my package? It was supposed to arrive yesterday.",
+      "My order #104-39281 has been stuck in transit for 4 days without updates.",
+      "Tracking says delivered but nothing is on my porch. Can you help locate it?"
+    ]
+  },
+  "refund_return_request": {
+    "description": "Requests to return an item, obtain return shipping labels, check status of a pending refund, or cancel an order for a refund.",
+    "inclusion_criteria": "Mentions refund, return label, drop off at UPS store/Kohl's, return policy window, cancellation for credit.",
+    "exclusion_criteria": "Complaints about payment card errors (payment_billing_issue) or Prime subscription refund (subscription_prime_issue).",
+    "typical_resolution": "Explain standard 30-day return policy, generate prepaid return mailing label, explain refund processing time (typically 3-5 business days after receipt).",
+    "examples": [
+      "I want to return this jacket, how do I get a return mailing label?",
+      "When will my refund be credited to my bank account for the returned monitor?",
+      "Can I return an opened electronic item to an Amazon drop-off location?"
+    ]
+  },
+  "damaged_defective_item": {
+    "description": "Reports of receiving damaged, broken, expired, defective, or incorrect products.",
+    "inclusion_criteria": "Mentions broken on arrival, damaged box, defective product, wrong item received, shattered, missing pieces.",
+    "exclusion_criteria": "Complaints solely about delivery delay where package is undamaged (delivery_delay_tracking).",
+    "typical_resolution": "Apologize for product condition, initiate free replacement or returnless refund if applicable, provide return instructions.",
+    "examples": [
+      "I opened my parcel and the glass coffee press is completely shattered.",
+      "You sent me the wrong book instead of the cookbook I ordered.",
+      "The blender worked for two minutes and then started smoking, it is defective."
+    ]
+  },
+  "payment_billing_issue": {
+    "description": "Inquiries and disputes concerning payment charges, duplicate debits, declined cards, or gift card balances.",
+    "inclusion_criteria": "Mentions double charged, unexpected charge, payment method failed, gift card code invalid, invoice discrepancy.",
+    "exclusion_criteria": "Refund status for an item already returned (refund_return_request) or annual Prime membership fee charge (subscription_prime_issue).",
+    "typical_resolution": "Verify billing statement, explain pending authorizations vs posted charges, assist with re-entering card details or redeeming gift cards.",
+    "examples": [
+      "I see two charges of $45.99 on my credit card statement for a single order.",
+      "My payment keeps declining even though my bank says funds are available.",
+      "My gift card balance was not applied to my purchase at checkout."
+    ]
+  },
+  "account_login_access": {
+    "description": "Problems with logging in, two-factor authentication (2FA/OTP), password resets, or account security concerns.",
+    "inclusion_criteria": "Mentions cannot sign in, forgot password, not getting OTP code, two-step verification loop, account locked or hacked.",
+    "exclusion_criteria": "Prime membership questions while logged in (subscription_prime_issue).",
+    "typical_resolution": "Provide password reset link, guide through Two-Step Verification account recovery form, or advise security procedures.",
+    "examples": [
+      "I cannot log into my account because I am not receiving the OTP text message.",
+      "My Amazon account is locked and asking for identity verification documents.",
+      "How do I reset my password if I lost access to my registered email address?"
+    ]
+  },
+  "subscription_prime_issue": {
+    "description": "Questions and requests regarding Amazon Prime membership, renewal fees, cancellations, and digital benefits.",
+    "inclusion_criteria": "Mentions Prime membership, annual subscription fee, student Prime discount, cancel Prime, Prime Video access.",
+    "exclusion_criteria": "Standard order delivery queries that happen to use Prime delivery (delivery_delay_tracking).",
+    "typical_resolution": "Guide to Manage Your Prime Membership page, explain pro-rated cancellation refund policy, assist with digital perk activation.",
+    "examples": [
+      "Why was I charged $139 for an annual Prime subscription I did not authorize?",
+      "How do I cancel my Amazon Prime membership and get a refund for unused months?",
+      "My Prime video is saying I do not have an active subscription but I paid."
+    ]
+  },
+  "product_inquiry_availability": {
+    "description": "Pre-purchase questions about product specifications, compatibility, stock availability, pricing, or sellers.",
+    "inclusion_criteria": "Mentions is this in stock, restock date, product dimensions, compatibility with device, third-party seller questions.",
+    "exclusion_criteria": "Complaints about an item already received broken (damaged_defective_item).",
+    "typical_resolution": "Provide product page specifications, suggest adding item to Wishlist for restock notifications, clarify seller details.",
+    "examples": [
+      "Will this phone case fit the iPhone 15 Pro or just the base model?",
+      "When will the 64GB version of this tablet be back in stock?",
+      "Is this product sold directly by Amazon or by a third-party seller?"
+    ]
+  },
+  "general_complaint_feedback": {
+    "description": "Customer dissatisfaction with courier behavior, poor customer service experience, app bugs, or policy disagreements.",
+    "inclusion_criteria": "Mentions terrible service, rude delivery driver, driver threw package, useless customer support, formal complaint.",
+    "exclusion_criteria": "Routine tracking questions without anger or complaint (delivery_delay_tracking).",
+    "typical_resolution": "Acknowledge frustration with empathy, log delivery carrier feedback with logistics team, escalate to leadership/specialist if needed.",
+    "examples": [
+      "Your delivery driver threw my package onto my driveway in the pouring rain!",
+      "I have spoken to three different agents today and nobody is helping me. This is unacceptable.",
+      "I want to file a formal complaint regarding your customer service representative's behavior."
+    ]
+  }
+}
