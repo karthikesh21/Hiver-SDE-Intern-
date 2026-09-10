@@ -4,8 +4,8 @@
 - **Sample Size**: 40 customer support responses selected across all 8 intents (5 per intent).
 - **Rubric Dimensions**: Correctness (1-5), Historical Grounding (1-5), Helpfulness (1-5), Tone (1-5), Hallucination-Free (1-5).
 - **Statistical Measures**:
-  - **Spearman Rank Correlation ($ho$)**: `0.3700` (p-value: `1.88e-02`)
-  - **Pearson Linear Correlation ($r$)**: `0.3263` (p-value: `3.99e-02`)
+  - **Spearman Rank Correlation ($ho$)**: `0.3836` (p-value: `1.46e-02`)
+  - **Pearson Linear Correlation ($r$)**: `0.3428` (p-value: `3.04e-02`)
   - **Mean Absolute Difference (MAD)**: `0.165` points on a 5-point scale
   - **Exact Agreement Rate**: `7.5%`
   - **Near Agreement Rate (within $\pm 0.5$ points)**: `95.0%`
@@ -18,8 +18,8 @@
 ## Statistical Summary Table
 | Metric | Value | Interpretation |
 | :--- | :--- | :--- |
-| **Spearman $ho$** | `0.3700` | Strong positive monotonic rank alignment |
-| **Pearson $r$** | `0.3263` | Strong linear agreement |
+| **Spearman $ho$** | `0.3836` | Strong positive monotonic rank alignment |
+| **Pearson $r$** | `0.3428` | Strong linear agreement |
 | **Mean Absolute Difference** | `0.165` | Under 0.35 score discrepancy on 5-point scale |
 | **Near Agreement ($\le 0.5$)** | `95.0%` | High consensus on pass/fail quality thresholds |
 

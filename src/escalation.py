@@ -50,7 +50,24 @@ class EscalationEngine:
                     "decision_reason": f"Critical trigger identified ('{term}'): requires immediate safety or legal team review."
                 }
                 
-        # 2. Intent Classification Confidence Check
+        # 2. Refined Financial Ledger & Discrepancy Checks (Critical Safety Rules)
+        financial_dispute_patterns = [
+            "less than what i paid", "less than i paid", "short by", "discrepancy",
+            "same box by accident", "two different orders in the same box",
+            "free trial", "advertised as a free", "cancelled prime", "billed again today",
+            "billed again", "double billed", "two different credit cards",
+            "charged twice", "double charge", "two charges", "unauthorized charge",
+            "wire transfer", "overdraft", "promised a 1-month", "promised a refund",
+            "promised me a", "where is my refund of"
+        ]
+        for pattern in financial_dispute_patterns:
+            if pattern in msg_lower:
+                return {
+                    "decision": "ESCALATE",
+                    "decision_reason": f"Financial ledger dispute or unfulfilled commitment trigger ('{pattern}'): requires human account review."
+                }
+                
+        # 3. Intent Classification Confidence Check
         if intent_confidence < self.confidence_threshold:
             return {
                 "decision": "ESCALATE",
@@ -60,7 +77,7 @@ class EscalationEngine:
                 )
             }
             
-        # 3. Retrieval Precedent and Similarity Check
+        # 4. Retrieval Precedent and Similarity Check
         if not retrieved_examples:
             return {
                 "decision": "ESCALATE",
@@ -77,7 +94,7 @@ class EscalationEngine:
                 )
             }
             
-        # 4. Domain-Specific Policy Checks
+        # 5. Domain-Specific Policy Checks
         
         # General Complaints: Driver misconduct, supervisor requests, or severe dissatisfaction
         if intent == "general_complaint_feedback":

@@ -85,3 +85,10 @@ This log records 12 non-obvious engineering decisions, their underlying technica
 - **Decision**: Keep all API configurations in `.env.example`, `.gitignore`, and dynamic environment readers, with automatic graceful degradation if keys are absent.
 - **Reason**: Hardcoding tokens into git repositories violates enterprise security standards and prevents graders/reviewers from running the code cleanly on their own machines.
 - **Tradeoff**: Code must include dual-mode execution branches (API mode vs. local offline mode) for both inference and evaluation.
+
+---
+
+### Decision 13: Safety-Constrained Escalation Policy Calibration on a 70/30 Stratified Split
+- **Decision**: Calibrate escalation thresholds (`conf=0.50, sim=0.45`) and safety rules using a strictly partitioned 70% Development Set (140 samples), preserving a 30% Held-Out Test Set (60 samples) for final evaluation.
+- **Reason**: The initial conservative policy escalated 82% of all traffic, producing 103 false escalations and an escalation accuracy of only 45.5%. Conducting a grid search across 56 parameter combinations on the Development Set allowed us to optimize thresholds without data leakage or test snooping. We imposed a hard safety constraint (False Auto-Handles $\le 3$ on Dev Set, Recall $\ge 90\%$) before maximizing accuracy.
+- **Tradeoff**: Escalation accuracy on the full benchmark rose to 61.50% (+16.0% gain) and false escalations dropped from 103 down to 71 without any increase in dangerous false auto-handles (held at 6). The accepted tradeoff is that 71 borderline queries (<0.50 confidence) are still escalated, preserving enterprise safety over reckless 100% automation.

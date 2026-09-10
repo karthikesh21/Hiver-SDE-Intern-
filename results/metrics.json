@@ -146,9 +146,9 @@
     },
     "main_ai_agent": {
       "intent_classification": {
-        "accuracy": 0.765,
-        "macro_f1": 0.7571,
-        "weighted_f1": 0.7571,
+        "accuracy": 0.77,
+        "macro_f1": 0.765,
+        "weighted_f1": 0.765,
         "per_intent": {
           "delivery_delay_tracking": {
             "precision": 0.6923,
@@ -157,15 +157,15 @@
             "support": 25.0
           },
           "refund_return_request": {
-            "precision": 0.7576,
-            "recall": 1.0,
-            "f1_score": 0.8621,
+            "precision": 0.75,
+            "recall": 0.96,
+            "f1_score": 0.8421,
             "support": 25.0
           },
           "damaged_defective_item": {
-            "precision": 0.7826,
+            "precision": 0.8571,
             "recall": 0.72,
-            "f1_score": 0.75,
+            "f1_score": 0.7826,
             "support": 25.0
           },
           "payment_billing_issue": {
@@ -181,15 +181,15 @@
             "support": 25.0
           },
           "subscription_prime_issue": {
-            "precision": 0.7353,
+            "precision": 0.7576,
             "recall": 1.0,
-            "f1_score": 0.8475,
+            "f1_score": 0.8621,
             "support": 25.0
           },
           "product_inquiry_availability": {
-            "precision": 0.8571,
-            "recall": 0.48,
-            "f1_score": 0.6154,
+            "precision": 0.7778,
+            "recall": 0.56,
+            "f1_score": 0.6512,
             "support": 25.0
           },
           "general_complaint_feedback": {
@@ -201,16 +201,16 @@
         }
       },
       "escalation": {
-        "accuracy": 0.455,
-        "escalate_precision": 0.372,
+        "accuracy": 0.615,
+        "escalate_precision": 0.4621,
         "escalate_recall": 0.9104,
-        "escalate_f1": 0.5281,
-        "true_auto_handle": 30,
-        "false_escalate": 103,
+        "escalate_f1": 0.6131,
+        "true_auto_handle": 62,
+        "false_escalate": 71,
         "false_auto_handle_critical": 6,
         "true_escalate": 61,
         "false_auto_handle_rate": 0.0896,
-        "unnecessary_escalation_rate": 0.7744
+        "unnecessary_escalation_rate": 0.5338
       },
       "retrieval": {
         "mean_top1_similarity": 0.5714,

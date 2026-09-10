@@ -1,0 +1,1881 @@
+{
+  "subset": "Held-Out Test Set (N=60)",
+  "sample_size": 60,
+  "intent_accuracy": 0.7333,
+  "intent_macro_f1": 0.734,
+  "escalation_accuracy": 0.55,
+  "escalation_precision": 0.4146,
+  "escalation_recall": 0.85,
+  "escalation_f1": 0.5574,
+  "true_auto_handle": 16,
+  "false_escalation": 24,
+  "false_auto_handle": 3,
+  "true_escalate": 17,
+  "false_auto_handle_rate_pct": 15.0,
+  "auto_handle_percentage": 31.67,
+  "escalation_percentage": 68.33,
+  "retrieval_recall@3": 0.5167,
+  "mean_top1_similarity": 0.5827,
+  "predictions": [
+    {
+      "id": 2,
+      "customer_message": "My order has been stuck in 'Departed Facility' in Memphis for 5 days with no new scan.",
+      "gold_intent": "delivery_delay_tracking",
+      "pred_intent": "delivery_delay_tracking",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Advise carrier transit buffer and offer delivery date check.",
+      "reply": "We apologize for the delay with your delivery. Did we ask you to wait for a certain date before the refund is issued? Was it shipped by Amazon or a third-party seller?",
+      "decision_reason": "Intent classification confidence (0.48) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "20e91363b00d8d1ba93599aa0fed4fb7",
+          "similarity": 0.573,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Did we ask you to wait for a certain date before the refund is issued? Was it shipped by Amazon or a third-party seller?..."
+        },
+        {
+          "conversation_id": "900e14c2be1d2a836f630fd7e8bb5d60",
+          "similarity": 0.5406,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We understand there has been an issue with the delivery. Let us investigate this further. (1/2) ^VM"
+        },
+        {
+          "conversation_id": "8059873a37b283279d6c16464a08e743",
+          "similarity": 0.5348,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We're sorry about the miscommunication. Please contact us here: [link] so we could sort this right away.^RS"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "customer_message": "Why does Amazon logistics keep delivering to the back alley instead of front porch?",
+      "gold_intent": "delivery_delay_tracking",
+      "pred_intent": "delivery_delay_tracking",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Provide instructions on updating delivery preferences and gate codes.",
+      "reply": "We apologize for the delay with your delivery. Wow! We're glad you put us ahead of your food \ud83d\ude42 We'll be sure to consider the pick up option.",
+      "decision_reason": "Intent classification confidence (0.44) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "ae184aae866a9316ffd42c1d51f0cd1b",
+          "similarity": 0.5983,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Wow! We're glad you put us ahead of your food \ud83d\ude42 We'll be sure to consider the pick up option. ^SQ"
+        },
+        {
+          "conversation_id": "bfba7f2963b86779e41fa30576c6ee69",
+          "similarity": 0.5801,
+          "intent": "delivery_delay_tracking",
+          "resolution": "This isn't what we like to hear! Without giving any personal information, will you tell us more about what happened? ^HC"
+        },
+        {
+          "conversation_id": "bedc4e2e4d95cd755d55a82367dbb72b",
+          "similarity": 0.5774,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry for the wait! You may be interested in setting a safe place for your future deliveries: [link] ^RA"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "customer_message": "The delivery driver marked my package undeliverable due to dog, but I don't own any pets.",
+      "gold_intent": "delivery_delay_tracking",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Explain re-attempt schedule and update access notes.",
+      "reply": "We take your feedback very seriously and apologize for this experience. Fluffy. I think they prefer the term fluffy",
+      "decision_reason": "Intent classification confidence (0.35) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "e27dd980469a1347016b0cc339c1113e",
+          "similarity": 0.6349,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Fluffy. I think they prefer the term fluffy ^TR"
+        },
+        {
+          "conversation_id": "7140f7f341f410233372cab8feb3b029",
+          "similarity": 0.5538,
+          "intent": "delivery_delay_tracking",
+          "resolution": "You can look into refund/possible replacement options here: [link] Let us know if you have any questions! ^TG"
+        },
+        {
+          "conversation_id": "9e97dc1df428f28452bc475ee44a8bc3",
+          "similarity": 0.5476,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry for the trouble with the packaging. Please also provide feedback with order detail here: [link] ^MG"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "customer_message": "Can I change the delivery address while the package is already in transit?",
+      "gold_intent": "delivery_delay_tracking",
+      "pred_intent": "delivery_delay_tracking",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Explain courier policy that in-transit address re-routing cannot be modified.",
+      "reply": "We apologize for the delay with your delivery. you can. However, it can be made only within the same city from the original address.",
+      "decision_reason": "Intent classification confidence (0.44) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "c1747e9acb23a87221a52bb13771ba83",
+          "similarity": 0.79,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Yes, you can. However, it can be made only within the same city from the original address. ^VR"
+        },
+        {
+          "conversation_id": "2d631d481a718c8518c196ebd5467373",
+          "similarity": 0.7372,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Our support team will be happy to look into this. You can connect with us here: [link] ^CB"
+        },
+        {
+          "conversation_id": "c79f6835c46be3b9d1826ad7fd3be15c",
+          "similarity": 0.7188,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi Heather, for certain order we can, but delivery would take place 1-2 days afterwards. Do you have a safe place perhap..."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "customer_message": "Does Amazon Prime deliver packages on Sunday in postal code 98101?",
+      "gold_intent": "delivery_delay_tracking",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Confirm Sunday delivery availability for Prime eligible zip codes.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. Please don\u2019t provide your details as we consider them to be personal information. Our Twitter page is public. 2/2",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.66) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "b9938f110d33f8aef9fbe8a36c68efdf",
+          "similarity": 0.6625,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Please don\u2019t provide your details as we consider them to be personal information. Our Twitter page is public. 2/2 ^SH"
+        },
+        {
+          "conversation_id": "1a0610e996f98e38eec28cc3ea206d0a",
+          "similarity": 0.662,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We always aim to meet the delivery date given in your order confirmation e-mail! Has this date passed? Pls let us know! ..."
+        },
+        {
+          "conversation_id": "796c643febc8540de39a3f2dde14c5dc",
+          "similarity": 0.6562,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi Karl! Thanks for letting us know about this. When you are placing the order with us, is Friday the only delivery opti..."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "customer_message": "Driver took a delivery photo showing a front door that is definitely not my house.",
+      "gold_intent": "delivery_delay_tracking",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Confirmed misdelivery to wrong address requiring driver dispatch check.",
+      "reply": "We take your feedback very seriously and apologize for this experience. Oh no! I'd like to have my team look into this. Please send us your details here: the link in Your Orders",
+      "decision_reason": "Intent classification confidence (0.35) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "ec710bbbb9d959ec8b9eaa92b3e3c5e1",
+          "similarity": 0.6367,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Oh no! I'd like to have my team look into this. Please send us your details here: [link] ^JM"
+        },
+        {
+          "conversation_id": "5ec631048206a69e684f139544e6a77e",
+          "similarity": 0.5999,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry to see this! Please provide your details here: [link] and a specialist will contact you. ^HC"
+        },
+        {
+          "conversation_id": "9311399f7ae3bb326ae90ae0916bd1d4",
+          "similarity": 0.5943,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry we missed you. Do you use our Unattended Delivery Preference options? Details here: [link] ^TM"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "customer_message": "My delivery was marked handed to receptionist, but our office building has been closed for renovation.",
+      "gold_intent": "delivery_delay_tracking",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "False delivery confirmation requiring carrier investigation.",
+      "reply": "We take your feedback very seriously and apologize for this experience. Sorry to hear this. Please get in touch hear if you'd like us to investigate this for you: the link in Your Orders",
+      "decision_reason": "Intent classification confidence (0.41) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "ed537cf75a26afe44e244081be972948",
+          "similarity": 0.5287,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry to hear this. Please get in touch hear if you'd like us to investigate this for you: [link] ^RL"
+        },
+        {
+          "conversation_id": "c79f6835c46be3b9d1826ad7fd3be15c",
+          "similarity": 0.5017,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi Heather, for certain order we can, but delivery would take place 1-2 days afterwards. Do you have a safe place perhap..."
+        },
+        {
+          "conversation_id": "9ba4fd7352270802e7437a1293e94540",
+          "similarity": 0.4957,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We'd like to report this to Amazon Logistics. When you have a moment, please send us your details: [link] ^AM"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "customer_message": "Why was a $5.99 return shipping fee deducted from my refund?",
+      "gold_intent": "refund_return_request",
+      "pred_intent": "refund_return_request",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Explain return shipping deduction policy for discretionary customer returns.",
+      "reply": "We are glad to assist you with your return or refund. If it was wrongly ordered and returned, then you won't be refunded for the shipping costs I'm afraid.",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.72) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "051f63c8c52b9adb517c3cba0c3b841f",
+          "similarity": 0.7161,
+          "intent": "delivery_delay_tracking",
+          "resolution": "If it was wrongly ordered and returned, then you won't be refunded for the shipping costs I'm afraid. ^KM"
+        },
+        {
+          "conversation_id": "fa1a63a9c728858416dc25003a3bcf29",
+          "similarity": 0.6604,
+          "intent": "refund_return_request",
+          "resolution": "If we've missed the delivery date we confirmed at checkout, reach out to us for options: [link] ^AM"
+        },
+        {
+          "conversation_id": "55bec21b83d31a6506919b0eedd715bd",
+          "similarity": 0.6307,
+          "intent": "refund_return_request",
+          "resolution": "Hi, what was your reason for returning your item? You can review our return shipping policy here: [link] ^FD"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "customer_message": "Can I get a refund directly to my PayPal account instead of the original credit card?",
+      "gold_intent": "refund_return_request",
+      "pred_intent": "refund_return_request",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "State standard policy that refunds must return to the original payment method or gift card balance.",
+      "reply": "We are glad to assist you with your return or refund. The bank of the original card you used will be able to better direct you on how to receive a refund from a closed account.",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.57) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "122d9b13975facec0fff300d2115e6db",
+          "similarity": 0.5672,
+          "intent": "delivery_delay_tracking",
+          "resolution": "The bank of the original card you used will be able to better direct you on how to receive a refund from a closed accoun..."
+        },
+        {
+          "conversation_id": "3e2c9d287425adccbcdf1b04857f5d93",
+          "similarity": 0.5477,
+          "intent": "refund_return_request",
+          "resolution": "Refunds are cleared in 3-5 business days, depending on the bank's processing time. ^CB"
+        },
+        {
+          "conversation_id": "d9632425154150ad33ec384e8baaa897",
+          "similarity": 0.5195,
+          "intent": "refund_return_request",
+          "resolution": "Oh no! You're welcome to cancel your Prime membership here: [link] Then update the payment and sign up! ^ST"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "customer_message": "Is there a limit on how many items I can return in a single month?",
+      "gold_intent": "refund_return_request",
+      "pred_intent": "refund_return_request",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Explain fair return policy guidelines.",
+      "reply": "We are glad to assist you with your return or refund. Sorry to know your return hasn't been picked up yet. Kindly connect with us here: the link in Your Orders We'll help!",
+      "decision_reason": "Intent classification confidence (0.43) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "dd6d9debc1f9a1223fdfd16961c95c67",
+          "similarity": 0.5657,
+          "intent": "refund_return_request",
+          "resolution": "Sorry to know your return hasn't been picked up yet. Kindly connect with us here: [link] We'll help! ^PS"
+        },
+        {
+          "conversation_id": "55bec21b83d31a6506919b0eedd715bd",
+          "similarity": 0.4786,
+          "intent": "refund_return_request",
+          "resolution": "Hi, what was your reason for returning your item? You can review our return shipping policy here: [link] ^FD"
+        },
+        {
+          "conversation_id": "48e01fdbbedaebe6ae936f33be67c109",
+          "similarity": 0.4629,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry about the delay. Kindly call us here: [link] we'll check this for you. ^SG"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "customer_message": "The return tracking shows item delivered to returns center in Kentucky 10 days ago with no refund.",
+      "gold_intent": "refund_return_request",
+      "pred_intent": "refund_return_request",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Exceeded standard refund processing SLA requiring manual refund issuance.",
+      "reply": "We are glad to assist you with your return or refund. We'd like to take a closer look at what's going on. When you have the time, please contact us here: the link in Your Orders",
+      "decision_reason": "Return policy exception or unresolved refund commitment requires human intervention.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "4e0191329dde16a921d9eb90b9ce3dc9",
+          "similarity": 0.681,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We'd like to take a closer look at what's going on. When you have the time, please contact us here: [link] ^RA"
+        },
+        {
+          "conversation_id": "55bec21b83d31a6506919b0eedd715bd",
+          "similarity": 0.6292,
+          "intent": "refund_return_request",
+          "resolution": "Hi, what was your reason for returning your item? You can review our return shipping policy here: [link] ^FD"
+        },
+        {
+          "conversation_id": "d1e0d1500ef97a15ae8ceaf9f065ab3a",
+          "similarity": 0.6281,
+          "intent": "delivery_delay_tracking",
+          "resolution": "When it reaches the warehouse and gets a scan a refund will be requested, refunds can take 7 days to process once reques..."
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "customer_message": "The seller refuses to issue my return authorization for a third-party marketplace purchase.",
+      "gold_intent": "refund_return_request",
+      "pred_intent": "refund_return_request",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Third-party seller dispute requiring Amazon A-to-z Guarantee claim filing.",
+      "reply": "We are glad to assist you with your return or refund. Sorry you haven't heard back from the seller, John! The next step would be to file a claim here: the link in Your Orders",
+      "decision_reason": "Intent classification confidence (0.34) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "4c966f19ac101087eb9d37d1e29ee327",
+          "similarity": 0.5694,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry you haven't heard back from the seller, John! The next step would be to file a claim here: [link] ^JZ"
+        },
+        {
+          "conversation_id": "3bb9da1b453d3a25f0864eaa6a6a426e",
+          "similarity": 0.5406,
+          "intent": "refund_return_request",
+          "resolution": "Thank you for letting us know about the same. Please be assured we'll sort this out for you. Also, please don't..^PB (1/..."
+        },
+        {
+          "conversation_id": "b99b2b7900282bd2607ed8b6dacf6fca",
+          "similarity": 0.5312,
+          "intent": "product_inquiry_availability",
+          "resolution": "We'll work on your experience for improvements, write to us using the link shared above & we'll escalate this accordingl..."
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "customer_message": "Do I have to pay return shipping if the item was not as described?",
+      "gold_intent": "refund_return_request",
+      "pred_intent": "refund_return_request",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Clarify that return shipping is free for defective or incorrectly described products.",
+      "reply": "We are glad to assist you with your return or refund. what was your reason for returning your item? You can review our return shipping policy here: the link in Your Orders",
+      "decision_reason": "High-confidence intent match (0.69) with verified grounded historical resolution (0.76) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "55bec21b83d31a6506919b0eedd715bd",
+          "similarity": 0.7647,
+          "intent": "refund_return_request",
+          "resolution": "Hi, what was your reason for returning your item? You can review our return shipping policy here: [link] ^FD"
+        },
+        {
+          "conversation_id": "051f63c8c52b9adb517c3cba0c3b841f",
+          "similarity": 0.6731,
+          "intent": "delivery_delay_tracking",
+          "resolution": "If it was wrongly ordered and returned, then you won't be refunded for the shipping costs I'm afraid. ^KM"
+        },
+        {
+          "conversation_id": "a096894f238fafe8e8a18ed846d4cb49",
+          "similarity": 0.6438,
+          "intent": "refund_return_request",
+          "resolution": "I'm sorry to hear this occurred. We'd be happy to help you with this, please contact us here: [link] ^CO"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "customer_message": "Can I drop off a return at any Amazon Fresh store?",
+      "gold_intent": "refund_return_request",
+      "pred_intent": "refund_return_request",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Confirm return drop-off capability at participating Amazon Fresh locations.",
+      "reply": "We are glad to assist you with your return or refund. what error are you getting when you try to access our website?",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.55) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "57ffa7db8897932fc80947693982a41a",
+          "similarity": 0.5475,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi, what error are you getting when you try to access our website? ^HN"
+        },
+        {
+          "conversation_id": "3a8cc544f34529118b6e8a3356871d18",
+          "similarity": 0.5334,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry for the trouble. Kindly report this to our support team here: [link] and we'll check this. ^HN"
+        },
+        {
+          "conversation_id": "3db84474f1e277cd96bffe003af01188",
+          "similarity": 0.5325,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'd like to take a closer look into this, please share your details on the link here: [link] We'll help! ^PS"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "customer_message": "I received a refund confirmation email but the amount is $20 less than what I paid.",
+      "gold_intent": "refund_return_request",
+      "pred_intent": "refund_return_request",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Disputed refund deduction requiring billing review.",
+      "reply": "We are glad to assist you with your return or refund. please contact us via this link and select email at the bottom of the page: the link in Your Orders",
+      "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('less than what i paid'): requires human account review.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "283c7f67ec9f1ba69318fdeee75ed5e6",
+          "similarity": 0.6395,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi, please contact us via this link and select email at the bottom of the page: [link] ^AT"
+        },
+        {
+          "conversation_id": "31baaf4a896255dcb3b02e2629193493",
+          "similarity": 0.627,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'd like to take a closer look into this. Please fill in this form: [link] and I'll revert accordingly. ^AB"
+        },
+        {
+          "conversation_id": "f85e3a77f3df16f378acda8ea88b020d",
+          "similarity": 0.626,
+          "intent": "refund_return_request",
+          "resolution": "If you've already shared the required details on the link provided earlier, you must have received an update from us. (1..."
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "customer_message": "The laptop I received powers on but the display has dead vertical colored lines.",
+      "gold_intent": "damaged_defective_item",
+      "pred_intent": "damaged_defective_item",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "High-value defective electronic item requiring tech assessment or replacement.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Intent classification confidence (0.24) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "94817330790ee35c27999c1b56d4c8a7",
+          "similarity": 0.4821,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We do want to help! Please use this link to set up a phone call so we can check this out w/ you: [link] ^GL"
+        },
+        {
+          "conversation_id": "54bb36bb09a3b1bf216990eb8e79b49e",
+          "similarity": 0.4217,
+          "intent": "delivery_delay_tracking",
+          "resolution": "letter of service denial from them with the official stamp and provide it to us. We'll then, look into it further. [2/2]..."
+        },
+        {
+          "conversation_id": "b82ee95757e1a1e9de9f73d47c8c5834",
+          "similarity": 0.4159,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry the Fire TV isn't turning on! Give us a call when you have time: [link] ^EP"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "customer_message": "The perfume bottle was completely empty because the nozzle broke during shipping.",
+      "gold_intent": "damaged_defective_item",
+      "pred_intent": "delivery_delay_tracking",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Process hazardous material returnless refund per policy for liquids/flammables.",
+      "reply": "We apologize for the delay with your delivery. Hi Emma, sorry to see that, have you checked the options available here: http:the link in Your Orders",
+      "decision_reason": "Intent classification confidence (0.23) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "b058e5f270484663d5de9dc74a61a8c6",
+          "similarity": 0.5486,
+          "intent": "damaged_defective_item",
+          "resolution": "Hi Emma, sorry to see that, have you checked the options available here: http:[link] ^JJ"
+        },
+        {
+          "conversation_id": "c19b2055ec59ddcff7ae67ef8035e707",
+          "similarity": 0.4651,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry your item arrived opened. Who's the carrier on your order? You can find this info here: [link] ^AN"
+        },
+        {
+          "conversation_id": "e19c5972c77e4255fddfc00bfdc297c1",
+          "similarity": 0.4645,
+          "intent": "damaged_defective_item",
+          "resolution": "I'm sorry your item arrived damaged. Please contact us here: [link] for further assistance. ^RD"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "customer_message": "The packaging box was completely intact, but the smartphone inside had a cracked screen.",
+      "gold_intent": "damaged_defective_item",
+      "pred_intent": "damaged_defective_item",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "High value internal damage requiring warehouse serialization audit.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. We appreciate this feedback. Please submit the order information to us: the link in Your Orders for our review.",
+      "decision_reason": "Intent classification confidence (0.36) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "4b250db01e6dfb8974c9d62a1a722f74",
+          "similarity": 0.5268,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We appreciate this feedback. Please submit the order information to us: [link] for our review. ^MG"
+        },
+        {
+          "conversation_id": "c7a70967dc430fc36e8b3a147397f89f",
+          "similarity": 0.5152,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We're sorry to hear this. We\u2019d like to assist, please contact us here: [link] so we could sort this soon.^RS"
+        },
+        {
+          "conversation_id": "f60960bbeddf9784f4e858faf3f3cc29",
+          "similarity": 0.4961,
+          "intent": "damaged_defective_item",
+          "resolution": "Oh no! I'm sorry your Kindle Fire is damaged! Please phone us here: [link] to discuss avail options. ^LB"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "customer_message": "The zipper on this backpack broke the very first time I pulled it.",
+      "gold_intent": "damaged_defective_item",
+      "pred_intent": "damaged_defective_item",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Facilitate return/replacement under 30-day return policy.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. Can you please tell us which site you use? Is it the link in Your Orders .co.uk?",
+      "decision_reason": "Intent classification confidence (0.29) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "08f1be355afb11240a99be782f69d36a",
+          "similarity": 0.5693,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Can you please tell us which site you use? Is it [link] .co.uk? ^AC"
+        },
+        {
+          "conversation_id": "78a8adb263de57ea97dca2d6d855230e",
+          "similarity": 0.3709,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We love to hear this! If you'd like, you can submit her survey in the e-mail you receive, after your conversation! \ud83d\ude0a ^KJ"
+        },
+        {
+          "conversation_id": "50a3e950c77239ad9fe0b5fb37c9f929",
+          "similarity": 0.3456,
+          "intent": "damaged_defective_item",
+          "resolution": "We're here to help! Are you having troubles with the Kindle? If so, review return options here:[link] ^AL"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "customer_message": "I received an envelope that was completely unsealed and completely empty inside!",
+      "gold_intent": "damaged_defective_item",
+      "pred_intent": "delivery_delay_tracking",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Stolen or lost in transit contents requiring investigation and replacement.",
+      "reply": "We apologize for the delay with your delivery. I am sorry to hear this. Please reach out to us directly here: the link in Your Orders the link in Your Orders",
+      "decision_reason": "Intent classification confidence (0.29) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "8c050f313e3ae4e923c50f25abd75f1c",
+          "similarity": 0.6616,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hello, I am sorry to hear this. Please reach out to us directly here: [link] [link] ^CR"
+        },
+        {
+          "conversation_id": "cdc5a655c14d1d4542b06c0ee02dd911",
+          "similarity": 0.6068,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry to hear you don't have your parcel! Here's a link to our Help page for this situation: [link] ^BV"
+        },
+        {
+          "conversation_id": "dd2305eaee372ab1de66c270157461e3",
+          "similarity": 0.6036,
+          "intent": "delivery_delay_tracking",
+          "resolution": "That's strange! Have you reported this to our support team here: [link] ? ^AG"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "customer_message": "The package smelled like laundry detergent because another item crushed inside leaked on it.",
+      "gold_intent": "damaged_defective_item",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Process replacement for contaminated order.",
+      "reply": "We take your feedback very seriously and apologize for this experience. Sorry to know you received damaged item, we certainly did not expect this to happen. 1/2",
+      "decision_reason": "Intent classification confidence (0.31) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "fbab8d78281d9db5abb9b463019bf1f5",
+          "similarity": 0.6611,
+          "intent": "damaged_defective_item",
+          "resolution": "Sorry to know you received damaged item, we certainly did not expect this to happen. 1/2 ^PS"
+        },
+        {
+          "conversation_id": "74c34d6e167aaa2142d0cf383660ee49",
+          "similarity": 0.596,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm really sorry to hear this! Who was the carrier for this shipment: [link] ^BV"
+        },
+        {
+          "conversation_id": "ca441205747665cd85f0d368e143613a",
+          "similarity": 0.4852,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hello Dave! Sorry for the frustration! When you called in, what type of issue was it for, exactly? We'd love to help! ^J..."
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "customer_message": "The lightbulbs were shattered into glass dust inside the bubble wrap.",
+      "gold_intent": "damaged_defective_item",
+      "pred_intent": "damaged_defective_item",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Advise safe disposal and issue replacement without requiring return of broken glass.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Top historical resolution similarity (0.42) is below grounding threshold (0.45).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "3a87f588837848c7d68f0a0ce34828bb",
+          "similarity": 0.4222,
+          "intent": "damaged_defective_item",
+          "resolution": "I'm so sorry they came damaged! Have you reported this to us or left packaging feedback? Was this through Prime Pantry? ..."
+        },
+        {
+          "conversation_id": "7a5ddcf5c70e039ae884621f80150a40",
+          "similarity": 0.3397,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi! If you ever receive an order where packaging improvement was needed, please submit it to us: [link] ^MG"
+        },
+        {
+          "conversation_id": "4b314b4f2b37f004eb184d90c90c6a2d",
+          "similarity": 0.3314,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We'd like to help out, Jessica, but we do not have access to account information here on Twitter and unable to ring you!..."
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "customer_message": "You shipped me the Spanish language edition of the textbook instead of English.",
+      "gold_intent": "damaged_defective_item",
+      "pred_intent": "damaged_defective_item",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Arrange free return and dispatch correct language edition.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Intent classification confidence (0.35) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "1875489d93b24280dc2ba9489001f3d3",
+          "similarity": 0.4855,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I can understand your urgency. Since it is return for replacement we cannot assure you a guarantee delivery date. (1/2) ..."
+        },
+        {
+          "conversation_id": "2f8de68397175d95b072f42da99b30da",
+          "similarity": 0.4747,
+          "intent": "delivery_delay_tracking",
+          "resolution": "You are most certainly welcome, and thank you for reaching out to us today. We're here to help if you need us. Happy sho..."
+        },
+        {
+          "conversation_id": "c9d7c437bb3a55d71c4ac67e0eb19404",
+          "similarity": 0.469,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Just to confirm, have you dropped in your details using the link provided by ^SQ ? We'd like to have a look into it. ^AB"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "customer_message": "I was charged twice ($64.99 each) for order #114-8829102 on my Visa card.",
+      "gold_intent": "payment_billing_issue",
+      "pred_intent": "payment_billing_issue",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Duplicate billing dispute requiring merchant ledger verification.",
+      "reply": "We understand your concern regarding this charge. Sorry about those charges, Will! Let's see if we can find out where they are coming from: the link in Your Orders",
+      "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('charged twice'): requires human account review.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "48027ae4ac8c8087cabce871dd65e78e",
+          "similarity": 0.7492,
+          "intent": "payment_billing_issue",
+          "resolution": "Sorry about those charges, Will! Let's see if we can find out where they are coming from: [link] ^JZ"
+        },
+        {
+          "conversation_id": "d14d8e1c202057ad73a1bfdfeecd9c35",
+          "similarity": 0.7427,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Is it possible that you saw an authorization: [link] We usually only charge when the order is dispatching. ^JJ"
+        },
+        {
+          "conversation_id": "7a14556aad993bcef6fb3fb4e2935e55",
+          "similarity": 0.7115,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Strange - did you request a replacement - or was the order duplicated ? Pls check here: [link] ^TD"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "customer_message": "My credit card was declined at checkout but my bank confirmed my card has no hold.",
+      "gold_intent": "payment_billing_issue",
+      "pred_intent": "payment_billing_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Provide instructions to verify billing address match and re-enter card details.",
+      "reply": "We understand your concern regarding this charge. I completely understand your disappointment. Kindly contact us here the link in Your Orders and we'll look into it.",
+      "decision_reason": "High-confidence intent match (0.78) with verified grounded historical resolution (0.61) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "ef06a2cec0e214c08342b615c8ee7831",
+          "similarity": 0.6098,
+          "intent": "payment_billing_issue",
+          "resolution": "I completely understand your disappointment. Kindly contact us here [link] and we'll look into it. ^RD"
+        },
+        {
+          "conversation_id": "26b9090433e1c9a8b1055d76a24f87fa",
+          "similarity": 0.5991,
+          "intent": "payment_billing_issue",
+          "resolution": "We are sorry to hear that. Please reach us via: [link] and we'll look into this for you. ^VM"
+        },
+        {
+          "conversation_id": "f4a65400ef80eb6b48f439cb437b0f1a",
+          "similarity": 0.5577,
+          "intent": "payment_billing_issue",
+          "resolution": "I'm sorry for the trouble with the order! What site did you use to order? Was it [link] .co.uk or another? ^TG"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "customer_message": "My $50 Amazon gift card says 'already redeemed to another account' when I enter the claim code.",
+      "gold_intent": "payment_billing_issue",
+      "pred_intent": "payment_billing_issue",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Stolen or compromised gift card claim code requiring fraud investigation.",
+      "reply": "We understand your concern regarding this charge. Sorry about that, May I know if you contacted our support team here: the link in Your Orders",
+      "decision_reason": "High-confidence intent match (0.61) with verified grounded historical resolution (0.69) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "1ee3f827ae6e4e6976efde78817fe6c2",
+          "similarity": 0.6918,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry about that, May I know if you contacted our support team here: [link] ^BS"
+        },
+        {
+          "conversation_id": "d3e22adf0c7171419d2e6fad20e1e10f",
+          "similarity": 0.676,
+          "intent": "payment_billing_issue",
+          "resolution": "Oh no! We'd like to help out! Please reach out to us here: [link] so we can take a closer look. ^VB"
+        },
+        {
+          "conversation_id": "a1fe0c74d0fb91ecc2e3d8932af8c6e2",
+          "similarity": 0.6355,
+          "intent": "delivery_delay_tracking",
+          "resolution": "An email Gift Card Code is 16 characters long (including hyphens) and will usually contain both letters and numbers. 1/2..."
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "customer_message": "Why was sales tax charged on an item shipped to an address in Delaware?",
+      "gold_intent": "payment_billing_issue",
+      "pred_intent": "delivery_delay_tracking",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Provide tax calculation details based on item category and shipping destination.",
+      "reply": "We apologize for the delay with your delivery. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Intent classification confidence (0.33) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "d141b598d0af0012cc12ceda52728694",
+          "similarity": 0.473,
+          "intent": "product_inquiry_availability",
+          "resolution": "This may be due to the pricing error on the website. I'll surely forward this as feedback internally & we'll work on it...."
+        },
+        {
+          "conversation_id": "e4b04e79255263e92bf29e3ce2a193c6",
+          "similarity": 0.472,
+          "intent": "subscription_prime_issue",
+          "resolution": "I'm very sorry for this wait. Did you receive a notification on a change in delivery estimate? ^DO"
+        },
+        {
+          "conversation_id": "fb8670936e40296036bc576db9f77bb7",
+          "similarity": 0.4704,
+          "intent": "payment_billing_issue",
+          "resolution": "Does the item your purchasing qualify for free shipping: [link] ^CL"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "customer_message": "Can I remove a saved credit card from my account so nobody else can use it?",
+      "gold_intent": "payment_billing_issue",
+      "pred_intent": "payment_billing_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Instruct user on navigating to Your Payments > select card > Edit > Remove from wallet.",
+      "reply": "We understand your concern regarding this charge. You're welcome! Don't hesitate to post back if you have any other questions. In the meantime, take care & have a great weekend!",
+      "decision_reason": "Intent classification confidence (0.38) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "7ac26705041f0d8bf0423b98098ca318",
+          "similarity": 0.6103,
+          "intent": "payment_billing_issue",
+          "resolution": "You're welcome! Don't hesitate to post back if you have any other questions. In the meantime, take care & have a great w..."
+        },
+        {
+          "conversation_id": "122d9b13975facec0fff300d2115e6db",
+          "similarity": 0.513,
+          "intent": "delivery_delay_tracking",
+          "resolution": "The bank of the original card you used will be able to better direct you on how to receive a refund from a closed accoun..."
+        },
+        {
+          "conversation_id": "cb1ed9099ece108ec4daf363c6749e8a",
+          "similarity": 0.4835,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry that we let you down. We're here to help! Without any personal/account information, can you tell us what's up?..."
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "customer_message": "My employer gave me a corporate credit card that requires PO numbers. Where do I enter this?",
+      "gold_intent": "payment_billing_issue",
+      "pred_intent": "payment_billing_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Explain Amazon Business account features for Purchase Order numbering.",
+      "reply": "We understand your concern regarding this charge. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Intent classification confidence (0.30) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "79b6183a82f7bc454793f12b7ab83bbb",
+          "similarity": 0.4611,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Oh no! We'd love to help Carla! To do so, please give us a ring or chat here: [link] we're here to help! ^JD"
+        },
+        {
+          "conversation_id": "e267faa1f3aaee7369283e94a3770848",
+          "similarity": 0.4093,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I do get your concern. I'll be sure to pass on your feedback to our team internally and have this reviewed. ^MM"
+        },
+        {
+          "conversation_id": "97a8d88d415edf30c6d332eef8bf0fdf",
+          "similarity": 0.4015,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Please don\u2019t provide the order details, we consider it to be personal info. Our Twitter page is visible to public. 2/2 ^..."
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "customer_message": "I accidentally selected the wrong credit card for my order. Can I change it after placing?",
+      "gold_intent": "payment_billing_issue",
+      "pred_intent": "payment_billing_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Explain that payment method can be changed in Your Orders if order hasn't entered dispatch.",
+      "reply": "We understand your concern regarding this charge. Once the order is placed we'll not be able to make any changes to the order. 1/2",
+      "decision_reason": "High-confidence intent match (0.55) with verified grounded historical resolution (0.64) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "536b6389c1e41aec37e87258c14698a3",
+          "similarity": 0.6415,
+          "intent": "payment_billing_issue",
+          "resolution": "Once the order is placed we'll not be able to make any changes to the order. 1/2 ^MM"
+        },
+        {
+          "conversation_id": "7ac26705041f0d8bf0423b98098ca318",
+          "similarity": 0.5597,
+          "intent": "payment_billing_issue",
+          "resolution": "You're welcome! Don't hesitate to post back if you have any other questions. In the meantime, take care & have a great w..."
+        },
+        {
+          "conversation_id": "26b9090433e1c9a8b1055d76a24f87fa",
+          "similarity": 0.5527,
+          "intent": "payment_billing_issue",
+          "resolution": "We are sorry to hear that. Please reach us via: [link] and we'll look into this for you. ^VM"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "customer_message": "I received an email saying someone logged into my account from a device in Russia.",
+      "gold_intent": "account_login_access",
+      "pred_intent": "account_login_access",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Active security breach requiring immediate account lockdown and password reset.",
+      "reply": "We apologize for the trouble accessing your account. I understand. We don't have access to customer accounts over Twitter. The link ^AM provided does not require sign in.",
+      "decision_reason": "Intent classification confidence (0.42) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "24c5fb2808d77386f1869efed093096d",
+          "similarity": 0.6498,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I understand. We don't have access to customer accounts over Twitter. The link ^AM provided does not require sign in. ^B..."
+        },
+        {
+          "conversation_id": "1e460a08eb8b6c172262e79433184562",
+          "similarity": 0.6285,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Please contact us directly here: [link] so we can take a closer look into this with you, Alex. ^CE"
+        },
+        {
+          "conversation_id": "94ea796d10207a7c52182b8643d2c5ad",
+          "similarity": 0.5368,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry you're having problems with your account. Please contact us using the link: [link] ^EM"
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "customer_message": "How do I permanently delete my Amazon account and personal data?",
+      "gold_intent": "account_login_access",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Guide user to the Close Your Amazon Account privacy request page.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. I'm sorry for the inconvenience! What browser are you using Amazon Assistant on?",
+      "decision_reason": "Intent classification confidence (0.40) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "c966f27ea67c49d98be607e38eee35eb",
+          "similarity": 0.7208,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry for the inconvenience! What browser are you using Amazon Assistant on? ^KB"
+        },
+        {
+          "conversation_id": "1864ea341b1d3d4e2137e17e40b9220e",
+          "similarity": 0.7203,
+          "intent": "account_login_access",
+          "resolution": "Sorry to hear that, please call us on the number found via this link: [link] so it can be escalated. ^JJ"
+        },
+        {
+          "conversation_id": "2027fe96f39a43c255e3a9a4fae8c727",
+          "similarity": 0.6847,
+          "intent": "general_complaint_feedback",
+          "resolution": "I'm sorry for the unpleasant experience you had, write to us here: [link] & we'll get in touch with you. ^MJ"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "customer_message": "How do I change my account name and public profile handle?",
+      "gold_intent": "account_login_access",
+      "pred_intent": "account_login_access",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Instruct user to visit Your Account > Your Public Profile > Edit Profile.",
+      "reply": "We apologize for the trouble accessing your account. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "High-confidence intent match (0.52) with verified grounded historical resolution (0.48) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "515b1e7d990b3f885ceba2fa61338a87",
+          "similarity": 0.4833,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi there, Nathan! I'm sorry to hear this! Please reach out here: [link] so we can look into this. ^WJ"
+        },
+        {
+          "conversation_id": "8f85ae301cc97a48eaf58fe343c5a797",
+          "similarity": 0.4434,
+          "intent": "delivery_delay_tracking",
+          "resolution": "My apologies for this. What Amazon site do you use? For example. [link] Amazon.es etc. ^PK"
+        },
+        {
+          "conversation_id": "a17e2b34005e86184920f197167d4318",
+          "similarity": 0.4322,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry to hear about this. We would like to help. W/o posting personal info, are you able to elaborate on the issue? ^PK"
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "customer_message": "Can I set up Touch ID or Face ID passkey to sign into the Amazon mobile app?",
+      "gold_intent": "account_login_access",
+      "pred_intent": "account_login_access",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Explain Passkey configuration in Login & Security settings.",
+      "reply": "We apologize for the trouble accessing your account. Thanks for your feedback. I'll forward it internally for further improvements.",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.50) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "4c31ad6e08e245642dd0b2911acc66b1",
+          "similarity": 0.5014,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Thanks for your feedback. I'll forward it internally for further improvements. ^PS"
+        },
+        {
+          "conversation_id": "9dfc62a063c178acbb95212d7f38c205",
+          "similarity": 0.4842,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Glad to know that. Do keep us posted for any further concerns. ^SG"
+        },
+        {
+          "conversation_id": "faf82448cda7c4260ad28597433aeb71",
+          "similarity": 0.4814,
+          "intent": "delivery_delay_tracking",
+          "resolution": "There is not a way to lock the device. You can find handy info here:[link] if something unfortunate happens! ^FR"
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "customer_message": "I am receiving continuous verification codes on my phone that I did not trigger.",
+      "gold_intent": "account_login_access",
+      "pred_intent": "account_login_access",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Credential stuffing / brute-force alert requiring immediate credential change.",
+      "reply": "We apologize for the trouble accessing your account. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Intent classification confidence (0.28) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "362d66730d83f1fd0451019579799607",
+          "similarity": 0.4936,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry for the poor experience. When you spoke to us, what options or information were we able to provide? ^WT"
+        },
+        {
+          "conversation_id": "67382a2aa5f403019e8a4c4cd20e600d",
+          "similarity": 0.4773,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry for the hassle. You can contact us here: [link] and we'll check this for you. ^HN"
+        },
+        {
+          "conversation_id": "bd5fed4d437b3f52556c804e9a742e70",
+          "similarity": 0.4713,
+          "intent": "delivery_delay_tracking",
+          "resolution": "That's strange, Lord. Have you escalated this to out support team here: [link] We will look into it. ^SB"
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "customer_message": "How do I remove an ex-partner from my Amazon Household sharing group?",
+      "gold_intent": "account_login_access",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Guide user to Manage Your Household > Remove Member settings.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. I'm sorry for the inconvenience! What browser are you using Amazon Assistant on?",
+      "decision_reason": "Intent classification confidence (0.27) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "c966f27ea67c49d98be607e38eee35eb",
+          "similarity": 0.5273,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry for the inconvenience! What browser are you using Amazon Assistant on? ^KB"
+        },
+        {
+          "conversation_id": "9e67d348995713747e2535ce99b8811c",
+          "similarity": 0.4796,
+          "intent": "delivery_delay_tracking",
+          "resolution": "If the details are shared, our team will reach out to you soon. Appreciate your understanding. ^HD"
+        },
+        {
+          "conversation_id": "2027fe96f39a43c255e3a9a4fae8c727",
+          "similarity": 0.4791,
+          "intent": "general_complaint_feedback",
+          "resolution": "I'm sorry for the unpleasant experience you had, write to us here: [link] & we'll get in touch with you. ^MJ"
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "customer_message": "I lost access to the email domain where my Amazon account was registered 10 years ago.",
+      "gold_intent": "account_login_access",
+      "pred_intent": "account_login_access",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Lost domain credential recovery requiring support verification.",
+      "reply": "We apologize for the trouble accessing your account. And do you have any other email address' that you may have used?",
+      "decision_reason": "Account security verification or credential lockout requires identity verification.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "b5926cf75e11bc1267300883031b5c72",
+          "similarity": 0.7133,
+          "intent": "delivery_delay_tracking",
+          "resolution": "And do you have any other email address' that you may have used? ^AS"
+        },
+        {
+          "conversation_id": "a7b23ee02498564dea24f3d0242c9a1c",
+          "similarity": 0.6629,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We'd like to be sure there isn't! Just to confirm, what information and options were provided to you when you called us?..."
+        },
+        {
+          "conversation_id": "b557475c091a1fac22aaeb18778c61ab",
+          "similarity": 0.6525,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Apologies - Please reach out : [link] (No sign in necessary) we will escalate your issue further. ^TP"
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "customer_message": "How do I download a copy of all personal data Amazon holds about me under GDPR/CCPA?",
+      "gold_intent": "account_login_access",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Guide user to Request Your Information page under Privacy Central.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. I'm sorry for the trouble w/ your account! We'd like to take a closer look into this with you here: the link in Your Orders",
+      "decision_reason": "Intent classification confidence (0.29) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "944d205d7aee255e64570b39186f6c0e",
+          "similarity": 0.5085,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry for the trouble w/ your account! We'd like to take a closer look into this with you here: [link] ^KP"
+        },
+        {
+          "conversation_id": "3479fe8abeaceb756ffc71800f736379",
+          "similarity": 0.508,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We'll surely help you out. Could you please elaborate the issue so that we can look into it? ^AP"
+        },
+        {
+          "conversation_id": "2027fe96f39a43c255e3a9a4fae8c727",
+          "similarity": 0.4606,
+          "intent": "general_complaint_feedback",
+          "resolution": "I'm sorry for the unpleasant experience you had, write to us here: [link] & we'll get in touch with you. ^MJ"
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "customer_message": "How do I cancel my Amazon Prime subscription and get a refund for remaining months?",
+      "gold_intent": "subscription_prime_issue",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Provide instructions to End Membership under Manage Prime Membership.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. Hey there, let's follow the steps on here so we can cancel your membership: the link in Your Orders",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.86) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "66b8ac27015f6516cfcfe1b672179854",
+          "similarity": 0.8552,
+          "intent": "subscription_prime_issue",
+          "resolution": "Hey there, let's follow the steps on here so we can cancel your membership: [link] ^GG"
+        },
+        {
+          "conversation_id": "6fb01149e51a2c24895ca8d96863e6e1",
+          "similarity": 0.7752,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Great question! You can sign up for Amazon Prime through the following link: [link] ^ST"
+        },
+        {
+          "conversation_id": "8f9ecd46412efd6513accbca4b8e4603",
+          "similarity": 0.7682,
+          "intent": "refund_return_request",
+          "resolution": "Please get in touch by Phone or Chat here: [link] for options as we can't access your account on Twitter. ^EZ"
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "customer_message": "My Prime subscription auto-renewed yesterday. I haven't used any benefits, can I get a refund?",
+      "gold_intent": "subscription_prime_issue",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Confirm automated full refund policy if zero Prime benefits used since renewal.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. Oh no! You're welcome to cancel your Prime membership here: the link in Your Orders Then update the payment and sign up!",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.77) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "d9632425154150ad33ec384e8baaa897",
+          "similarity": 0.7732,
+          "intent": "refund_return_request",
+          "resolution": "Oh no! You're welcome to cancel your Prime membership here: [link] Then update the payment and sign up! ^ST"
+        },
+        {
+          "conversation_id": "d615b092b214480b0fe02175cd1d5de2",
+          "similarity": 0.7433,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi Josh, did you receive an email confirming the cancellation? Can you see an option to cancel - [link] ? ^TP"
+        },
+        {
+          "conversation_id": "30e7ec39cba516ee7a864e41f0d331db",
+          "similarity": 0.6829,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Very sorry to hear this.If you were charged twice, this must have occurred on different accounts. Have you reached out t..."
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "customer_message": "How do I switch my Prime billing from monthly ($14.99) to annual ($139)?",
+      "gold_intent": "subscription_prime_issue",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Guide customer to Payment Plan settings inside Manage Prime.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. I understand your concern but prime subscription couldn't be renewed until the current subscription expires.",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.58) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "cad61a57fb971a833f1703de920318d4",
+          "similarity": 0.5786,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I understand your concern but prime subscription couldn't be renewed until the current subscription expires. ^GS"
+        },
+        {
+          "conversation_id": "984f00d24b7acd4a01fdbf70a6931e89",
+          "similarity": 0.5733,
+          "intent": "subscription_prime_issue",
+          "resolution": "Hi Harry- Is it a Free Trial you signed up for? Have you received an email since opting for Prime? ^NV"
+        },
+        {
+          "conversation_id": "1b57c564dac7fc102eede8e4ba00a039",
+          "similarity": 0.5641,
+          "intent": "subscription_prime_issue",
+          "resolution": "I'm sorry Yahvi, we currently do not have this option. You can renew your prime once the current one expires. ^HN"
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "customer_message": "Why am I seeing advertisements on Prime Video when I pay for a Prime membership?",
+      "gold_intent": "subscription_prime_issue",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Explain updated Prime Video tier with ad-free option add-on.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. Hi! In order to unsubscribe from marketing e-mails, please visit us here: the link in Your Orders",
+      "decision_reason": "High-confidence intent match (0.90) with verified grounded historical resolution (0.74) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "73a24ef6a8100bde95a5480630f21373",
+          "similarity": 0.7417,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi! In order to unsubscribe from marketing e-mails, please visit us here: [link] ^WT"
+        },
+        {
+          "conversation_id": "778312b1679eebd26d0ba99824ca749b",
+          "similarity": 0.6502,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry if the Prime Membership renewal was unclear. If you need anything further, let us know. ^MG"
+        },
+        {
+          "conversation_id": "2235c58c7ed8aad4d5d93da25d2f4c5e",
+          "similarity": 0.6438,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Oh no! Have you tried logging out of the account and then logging back in to see if that helps? Please let us know! ^TG"
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "customer_message": "I cancelled Prime 2 weeks ago but my credit card was just billed again today.",
+      "gold_intent": "subscription_prime_issue",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Recurring billing error on cancelled account requiring ledger audit.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. Hi Josh, did you receive an email confirming the cancellation? Can you see an option to cancel - the link in Your Orders ?",
+      "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('cancelled prime'): requires human account review.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "d615b092b214480b0fe02175cd1d5de2",
+          "similarity": 0.8214,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hi Josh, did you receive an email confirming the cancellation? Can you see an option to cancel - [link] ? ^TP"
+        },
+        {
+          "conversation_id": "8f9ecd46412efd6513accbca4b8e4603",
+          "similarity": 0.721,
+          "intent": "refund_return_request",
+          "resolution": "Please get in touch by Phone or Chat here: [link] for options as we can't access your account on Twitter. ^EZ"
+        },
+        {
+          "conversation_id": "d9632425154150ad33ec384e8baaa897",
+          "similarity": 0.7124,
+          "intent": "refund_return_request",
+          "resolution": "Oh no! You're welcome to cancel your Prime membership here: [link] Then update the payment and sign up! ^ST"
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "customer_message": "Does Amazon Prime include free Grubhub+ food delivery membership?",
+      "gold_intent": "subscription_prime_issue",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Confirm ongoing Grubhub+ partnership benefit for active Prime members.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. you get access to Prime Music: the link in Your Orders but Amazon Music Unlimited is separate: the link in Your Orders",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.62) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "3b0d861c2cf5ed4d7b139ee277c8a04a",
+          "similarity": 0.6248,
+          "intent": "subscription_prime_issue",
+          "resolution": "Hi, you get access to Prime Music: [link] but Amazon Music Unlimited is separate: [link] ^JJ"
+        },
+        {
+          "conversation_id": "b2b42ba64d97f180b49e7e2d156bf416",
+          "similarity": 0.5668,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry for any trouble. Did we happen to miss the estimated delivery date on the order here: [link] ^AB"
+        },
+        {
+          "conversation_id": "984f00d24b7acd4a01fdbf70a6931e89",
+          "similarity": 0.5525,
+          "intent": "subscription_prime_issue",
+          "resolution": "Hi Harry- Is it a Free Trial you signed up for? Have you received an email since opting for Prime? ^NV"
+        }
+      ]
+    },
+    {
+      "id": 147,
+      "customer_message": "How do I claim the free monthly Twitch channel subscription with Prime?",
+      "gold_intent": "subscription_prime_issue",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Provide steps to click 'Subscribe with Prime' on creator channel.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. During the trial, you are only eligible for one free channel subscription. No other benefits apply at the time of the trial.",
+      "decision_reason": "High-confidence intent match (0.91) with verified grounded historical resolution (0.67) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "ac2e5978b2fa4350296b744e032a1cc4",
+          "similarity": 0.6679,
+          "intent": "delivery_delay_tracking",
+          "resolution": "During the trial, you are only eligible for one free channel subscription. No other benefits apply at the time of the tr..."
+        },
+        {
+          "conversation_id": "2235c58c7ed8aad4d5d93da25d2f4c5e",
+          "similarity": 0.6653,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Oh no! Have you tried logging out of the account and then logging back in to see if that helps? Please let us know! ^TG"
+        },
+        {
+          "conversation_id": "1b57c564dac7fc102eede8e4ba00a039",
+          "similarity": 0.6164,
+          "intent": "subscription_prime_issue",
+          "resolution": "I'm sorry Yahvi, we currently do not have this option. You can renew your prime once the current one expires. ^HN"
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "customer_message": "Will this OtterBox case for iPhone 14 also fit an iPhone 15?",
+      "gold_intent": "product_inquiry_availability",
+      "pred_intent": "product_inquiry_availability",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Check and explain dimensional/camera cutout differences between phone generations.",
+      "reply": "Thank you for inquiring about this product. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Top historical resolution similarity (0.28) is below grounding threshold (0.45).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "fd0e999861327d62b08a39d04276e5fa",
+          "similarity": 0.28,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Apologies for the trouble with your order. Please share your details here: [link] We'll get this checked. ^HD"
+        },
+        {
+          "conversation_id": "b44e3ce5ac6ae109f89b399ab0c763da",
+          "similarity": 0.2794,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Oh no! I'm sorry for the trouble with the item. Was the item sold and fulfilled by Amazon or a third-party seller? ^TG"
+        },
+        {
+          "conversation_id": "21d99e9af3f672c753aaee43d47e3b00",
+          "similarity": 0.2712,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Please don't provide your order details as we consider it personal info. Our twitter page is visible to public. (2/2) ^C..."
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "customer_message": "When will the Sony WH-1000XM5 headphones in Silver be restocked?",
+      "gold_intent": "product_inquiry_availability",
+      "pred_intent": "product_inquiry_availability",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Explain stock availability and suggest using 'Email Me When Available' feature.",
+      "reply": "Thank you for inquiring about this product. We'd like to take a look at this with you. Provide your phone number here: the link in Your Orders and select 'Call me now'",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.55) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "c10390cc468a3ebc69d1196d326c60e6",
+          "similarity": 0.5511,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We'd like to take a look at this with you. Provide your phone number here: [link] and select 'Call me now' ^KP"
+        },
+        {
+          "conversation_id": "088b678d78f67b183253985cba9318e3",
+          "similarity": 0.5216,
+          "intent": "delivery_delay_tracking",
+          "resolution": "When did they set up the follow up? Has this time already passed? We want to ensure this is getting looked into! ^KJ"
+        },
+        {
+          "conversation_id": "24bff8852b9811c19fc8cc60d070195b",
+          "similarity": 0.5128,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry for the delay. Kindly contact out support team: [link] they will assist you further with the issue. ^GU"
+        }
+      ]
+    },
+    {
+      "id": 157,
+      "customer_message": "Does the manufacturer warranty apply when buying this watch from a third-party seller?",
+      "gold_intent": "product_inquiry_availability",
+      "pred_intent": "product_inquiry_availability",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Explain authorized dealer versus unauthorized marketplace seller warranty caveats.",
+      "reply": "Thank you for inquiring about this product. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Intent classification confidence (0.30) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "87f91a853cbcacf3191490229b5b6e6f",
+          "similarity": 0.4852,
+          "intent": "delivery_delay_tracking",
+          "resolution": "All products sold on Amazon come with a one-year manufacturer warranty. ^SA"
+        },
+        {
+          "conversation_id": "77df836e1e850385b12804c4acab112a",
+          "similarity": 0.4551,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'd like to take a closer look. Please share your details here: [link] and I'll get in touch with you. ^HD"
+        },
+        {
+          "conversation_id": "53643e1c5c834a7cd1fd3e86e42ed93d",
+          "similarity": 0.4418,
+          "intent": "delivery_delay_tracking",
+          "resolution": "offered by the brand or product seller. For more info please check here: [link] ^NR 2/2"
+        }
+      ]
+    },
+    {
+      "id": 158,
+      "customer_message": "Can this espresso maker use pre-ground coffee or only whole espresso beans?",
+      "gold_intent": "product_inquiry_availability",
+      "pred_intent": "damaged_defective_item",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Clarify brewing mechanism and filter basket compatibility.",
+      "reply": "We are very sorry to hear that your item arrived in that condition. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Intent classification confidence (0.28) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "75c8f466cbb1ebb385873d5ad0863f0d",
+          "similarity": 0.2404,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Eso nos emociona. \ud83d\ude2d\u2764 Cu\u00e9ntanos, \u00bfcu\u00e1l ha sido tu mejor compra en Amazon? ^DA [link]"
+        },
+        {
+          "conversation_id": "640acd18192d56b42283451bce9560b2",
+          "similarity": 0.2285,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Lamento esta experiencia. \u00bfHas intentado contactar con nuestro Equipo de Servicio al Cliente? ^VL"
+        },
+        {
+          "conversation_id": "ffbebd6d30c0e07d3b11b27bfd7e72f4",
+          "similarity": 0.2213,
+          "intent": "damaged_defective_item",
+          "resolution": "Entiendo, en ese caso, te recomiendo reportarnos este tipo de inconvenientes directamente con nuestro Soporte al Cliente..."
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "customer_message": "Are these sunglasses guaranteed authentic Ray-Ban or could they be counterfeit?",
+      "gold_intent": "product_inquiry_availability",
+      "pred_intent": "refund_return_request",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Reassure Amazon anti-counterfeiting policy and verify 'Sold by Amazon' authenticity.",
+      "reply": "We are glad to assist you with your return or refund. All the products sold on our website are genuine and factory sealed by the manufacturer.",
+      "decision_reason": "Intent classification confidence (0.20) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "df45e0dbf5036cfa260862a13afe7a58",
+          "similarity": 0.5233,
+          "intent": "delivery_delay_tracking",
+          "resolution": "All the products sold on our website are genuine and factory sealed by the manufacturer. ^SG"
+        },
+        {
+          "conversation_id": "fec70d952caf925733e0ccc5fc7addf7",
+          "similarity": 0.4397,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry you haven't received your glasses. Please try these steps: [link] ^RA"
+        },
+        {
+          "conversation_id": "c0eef7e99bbbd2c05ad84e52b7bf1c86",
+          "similarity": 0.3991,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry you've received counterfeit copies. We definitely don't want that. Did we say we were reporting the seller for..."
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "customer_message": "Are the dimensions listed for the package or for the actual product itself?",
+      "gold_intent": "product_inquiry_availability",
+      "pred_intent": "product_inquiry_availability",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Distinguish between Package Dimensions and Item Dimensions in spec table.",
+      "reply": "Thank you for inquiring about this product. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Top historical resolution similarity (0.44) is below grounding threshold (0.45).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "d6031fc2328b2f17eb6e87ab92e7cd3c",
+          "similarity": 0.4389,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We're always looking for ways to improve, Krista, & would appreciate your packaging feedback: [link] ^FR"
+        },
+        {
+          "conversation_id": "89c678742c6ad2e33bf1640c97162ea5",
+          "similarity": 0.3887,
+          "intent": "product_inquiry_availability",
+          "resolution": "We're always looking to improve! Please send us packaging feedback here: [link] ^GR"
+        },
+        {
+          "conversation_id": "839eed92cecb01e9e751d880390e9bff",
+          "similarity": 0.3798,
+          "intent": "product_inquiry_availability",
+          "resolution": "You may share your feedback about packaging here: [link] ^SB"
+        }
+      ]
+    },
+    {
+      "id": 166,
+      "customer_message": "Can I use this vacuum cleaner on high-pile shag carpets?",
+      "gold_intent": "product_inquiry_availability",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Consult product user manual recommendations regarding surface compatibility.",
+      "reply": "We take your feedback very seriously and apologize for this experience. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Intent classification confidence (0.17) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "cf02a295bb4a993e7e6b9b603bf7c4e3",
+          "similarity": 0.3005,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry for the trouble. Please fill this form: [link] and I\u2019ll contact you at the earliest. ^AU"
+        },
+        {
+          "conversation_id": "9e151ceae9cd0cdd53bac1c103cee24b",
+          "similarity": 0.1927,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry to know about this. We truly don't want our customers to experience this. Please report the 1/2 ^SH"
+        },
+        {
+          "conversation_id": "1fb4b6a026c5847df22963992a71925e",
+          "similarity": 0.1885,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Oh, this looks like a glitch! Thanks for flagging this. Please share the link to this product and we'll have it reviewed..."
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "customer_message": "An agent on chat was extremely disrespectful and closed the chat window in my face.",
+      "gold_intent": "general_complaint_feedback",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Agent conduct grievance requiring supervisor review and coaching audit.",
+      "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry to hear that. Could you please tell me your concern so that I can assist you accordingly? (1/2)",
+      "decision_reason": "Severe service complaint or delivery misconduct requires supervisory review.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "c01c50a247076c3f1aecc62bce817247",
+          "similarity": 0.5351,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry to hear that. Could you please tell me your concern so that I can assist you accordingly? (1/2)^AU"
+        },
+        {
+          "conversation_id": "7202cb275f6b7ee3505c8714c8cf5e50",
+          "similarity": 0.5173,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We would like to help . Please share your details with us here: [link] We'll get in touch shortly. ^CB"
+        },
+        {
+          "conversation_id": "db4f22244f3df4fa93237cac93e4697b",
+          "similarity": 0.4743,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We'd like to look into this for you. When you have a second, please send us more info about this here: [link] ^DW"
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "customer_message": "I received a delivery at 4:30 AM that woke up my entire house and set off my alarms.",
+      "gold_intent": "general_complaint_feedback",
+      "pred_intent": "delivery_delay_tracking",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Quiet hours delivery violation requiring delivery time preference enforcement.",
+      "reply": "We apologize for the delay with your delivery. I'm sorry to hear about this! To submit carrier feedback, please contact us: the link in Your Orders We want to help!",
+      "decision_reason": "High-confidence intent match (0.63) with verified grounded historical resolution (0.70) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "8207e9cbc79ea2db5e1475af5e57fd6d",
+          "similarity": 0.7005,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry to hear about this! To submit carrier feedback, please contact us: [link] We want to help! ^SD"
+        },
+        {
+          "conversation_id": "b00e18aa519cd578d4b242e376e70331",
+          "similarity": 0.6668,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We would like to help you. Please share your details with us here: [link] We'll get in touch shortly. ^CB"
+        },
+        {
+          "conversation_id": "7b6922d3d12a117b96a5d291e8757686",
+          "similarity": 0.652,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry for the incorrect update. The delivery will be reattempted tomorrow. Appreciate your understanding. ^SQ"
+        }
+      ]
+    },
+    {
+      "id": 185,
+      "customer_message": "Your automated bot was completely useless and wasted 30 minutes of my time.",
+      "gold_intent": "general_complaint_feedback",
+      "pred_intent": "subscription_prime_issue",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Acknowledge bot limitation with empathy and connect customer to human assistance.",
+      "reply": "We are happy to clarify your Amazon Prime membership details. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "Intent classification confidence (0.25) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "ae379e1c009097e52187b5d35c1bde6b",
+          "similarity": 0.4133,
+          "intent": "subscription_prime_issue",
+          "resolution": "Your prime subscription would be extended by one year on purchase of Echo. ^GK"
+        },
+        {
+          "conversation_id": "8995a1e42b62bf12ac1ad25a58e98a62",
+          "similarity": 0.3866,
+          "intent": "subscription_prime_issue",
+          "resolution": "Oh no! That's not good! Who's the carrier listed for your order here: [link] ^KP"
+        },
+        {
+          "conversation_id": "c58be9548bd5727927ccbb7da4406aa9",
+          "similarity": 0.3682,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hmmm...very wise, that is! Always looking to keep things nerdy we are. Quirky and fun, that is the Amazon way. \ud83d\ude01 ^JD"
+        }
+      ]
+    },
+    {
+      "id": 192,
+      "customer_message": "The delivery person was smoking right in front of our children while handing us the package.",
+      "gold_intent": "general_complaint_feedback",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Unprofessional conduct complaint requiring driver discipline investigation.",
+      "reply": "We take your feedback very seriously and apologize for this experience. I'm really sorry to hear this! Who was the carrier for this shipment: the link in Your Orders",
+      "decision_reason": "Intent classification confidence (0.36) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "74c34d6e167aaa2142d0cf383660ee49",
+          "similarity": 0.6516,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm really sorry to hear this! Who was the carrier for this shipment: [link] ^BV"
+        },
+        {
+          "conversation_id": "df7964624a7ebc0c57e1dd834e2f8bf2",
+          "similarity": 0.5206,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Please don't provide your order details, we consider it personal information. Our Twitter page is visible to public. ^VN..."
+        },
+        {
+          "conversation_id": "3d3f9c5a400c544629737891401dc4dd",
+          "similarity": 0.4736,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm terribly sorry for the experience you had with our delivery associate. That's certainly not acceptable. I'd like to ..."
+        }
+      ]
+    },
+    {
+      "id": 193,
+      "customer_message": "I want to file a formal complaint with corporate headquarters regarding deceptive billing.",
+      "gold_intent": "general_complaint_feedback",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "AUTO_HANDLE",
+      "expected_resolution": "Formal corporate grievance requiring regulatory/executive customer relations.",
+      "reply": "We take your feedback very seriously and apologize for this experience. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.48) under standard self-service policy.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "bbee12afe1e67c862d9b64ca4fa75c04",
+          "similarity": 0.4829,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Hey, Paul. We're here to help! I'm going to go ahead and respond to your DM, and then we can continue here or there. ^LB"
+        },
+        {
+          "conversation_id": "3310b2622e16159b8aa97b7c2c3ad09a",
+          "similarity": 0.4728,
+          "intent": "delivery_delay_tracking",
+          "resolution": "You may route this request through our support team here: [link] and they will help you with it. ^AB"
+        },
+        {
+          "conversation_id": "7c9c723a3d66410e73300d332cc73d77",
+          "similarity": 0.4704,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Please don't provide your order details as we consider it personal info. Our twitter page is visible to public.(2/2) ^CB"
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "customer_message": "The driver left my package right in front of the outward swinging storm door so I was trapped.",
+      "gold_intent": "general_complaint_feedback",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "AUTO_HANDLE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Acknowledge hazard and update driver placement instructions.",
+      "reply": "We take your feedback very seriously and apologize for this experience. We'd like to report this to Amazon Logistics. When you have a moment, please send us your details: the link in Your Orders",
+      "decision_reason": "Severe service complaint or delivery misconduct requires supervisory review.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "9ba4fd7352270802e7437a1293e94540",
+          "similarity": 0.5994,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We'd like to report this to Amazon Logistics. When you have a moment, please send us your details: [link] ^AM"
+        },
+        {
+          "conversation_id": "9311399f7ae3bb326ae90ae0916bd1d4",
+          "similarity": 0.5942,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry we missed you. Do you use our Unattended Delivery Preference options? Details here: [link] ^TM"
+        },
+        {
+          "conversation_id": "0da7f8a1379f0ba69baa486673fdffaa",
+          "similarity": 0.5493,
+          "intent": "delivery_delay_tracking",
+          "resolution": "So sorry about this, Rebecca! We want to look into this with you. Please reach out to us here: [link] ^VB"
+        }
+      ]
+    },
+    {
+      "id": 197,
+      "customer_message": "An agent promised me a $50 credit for my trouble, and the next agent called me a liar.",
+      "gold_intent": "general_complaint_feedback",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Critical dispute regarding agent integrity and promised compensation.",
+      "reply": "We take your feedback very seriously and apologize for this experience. We would like to help . Please share your details with us here: the link in Your Orders We'll get in touch shortly.",
+      "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('promised me a'): requires human account review.",
+      "retrieved_examples": [
+        {
+          "conversation_id": "7202cb275f6b7ee3505c8714c8cf5e50",
+          "similarity": 0.5078,
+          "intent": "delivery_delay_tracking",
+          "resolution": "We would like to help . Please share your details with us here: [link] We'll get in touch shortly. ^CB"
+        },
+        {
+          "conversation_id": "ffa23912c057323abe2cc24b825295f2",
+          "similarity": 0.506,
+          "intent": "delivery_delay_tracking",
+          "resolution": "I'm sorry for the unpleasant experience. We'd like to look into it. Kindly fill in your details (1/3)^AP"
+        },
+        {
+          "conversation_id": "215d29acba89b8801217700bc6e8c021",
+          "similarity": 0.4789,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Please fill out the survey sent to you after you contacted in. It will be sent to their direct leadership for review. ^C..."
+        }
+      ]
+    },
+    {
+      "id": 199,
+      "customer_message": "I've been waiting on hold on the telephone for 90 minutes. This is completely unacceptable.",
+      "gold_intent": "general_complaint_feedback",
+      "pred_intent": "general_complaint_feedback",
+      "gold_escalate": "ESCALATE",
+      "pred_escalate": "ESCALATE",
+      "expected_resolution": "Severe telephony hold escalation requiring priority callback.",
+      "reply": "We take your feedback very seriously and apologize for this experience. Sorry for the trouble. Kindly report this to our support team here:the link in Your Orders we'll look into it right away.",
+      "decision_reason": "Intent classification confidence (0.33) is below operational safety threshold (0.50).",
+      "retrieved_examples": [
+        {
+          "conversation_id": "136a87d5258f77891a662e390ee8743c",
+          "similarity": 0.5215,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry for the trouble. Kindly report this to our support team here:[link] we'll look into it right away. ^EM"
+        },
+        {
+          "conversation_id": "23d106931a5835cb70709589fc298026",
+          "similarity": 0.5204,
+          "intent": "delivery_delay_tracking",
+          "resolution": "This definitely isn't what we strive for! Without account info, could you tell us more about what's going on? ^ML"
+        },
+        {
+          "conversation_id": "776839800b4386331326a29ca5fbb9b6",
+          "similarity": 0.5121,
+          "intent": "delivery_delay_tracking",
+          "resolution": "Sorry for the delay. Please reach out to our support team here: [link] and we'll check this for you. ^SA"
+        }
+      ]
+    }
+  ]
+}

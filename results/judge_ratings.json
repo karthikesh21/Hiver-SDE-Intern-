@@ -1,7 +1,7 @@
 {
-  "spearman_correlation": 0.37,
-  "spearman_pvalue": 0.01876535448873897,
-  "pearson_correlation": 0.3263,
+  "spearman_correlation": 0.3836,
+  "spearman_pvalue": 0.014560993323343423,
+  "pearson_correlation": 0.3428,
   "mean_absolute_difference": 0.165,
   "exact_agreement_pct": 7.5,
   "near_agreement_pct": 95.0,
@@ -101,18 +101,18 @@
       "case_id": 26,
       "intent": "refund_return_request",
       "customer_message": "How do I return a pair of shoes that don't fit? Where do I drop them off?",
-      "reply": "We are glad to assist you with your return or refund. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
-      "judge_overall": 4.22,
-      "human_overall": 4.2,
+      "reply": "Thank you for inquiring about this product. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+      "judge_overall": 3.92,
+      "human_overall": 3.9,
       "absolute_difference": 0.02,
       "judge_details": {
-        "correctness": 3.4,
+        "correctness": 3.0,
         "grounding": 3.4,
-        "helpfulness": 4.5,
-        "tone": 4.8,
+        "helpfulness": 4.0,
+        "tone": 4.2,
         "hallucination": 5.0,
-        "overall": 4.22,
-        "reason": "Reply maintains strong tone (4.8) and grounding (3.4) with zero hallucination. Provides actionable self-service guidance."
+        "overall": 3.92,
+        "reason": "Reply maintains strong tone (4.2) and grounding (3.4) with zero hallucination. Provides actionable self-service guidance."
       }
     },
     {

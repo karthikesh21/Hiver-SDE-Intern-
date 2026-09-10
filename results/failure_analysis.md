@@ -1,20 +1,21 @@
-# Empirical Failure Mode Analysis
+# Empirical Failure Mode Analysis (Post-Escalation Improvement)
 
-This failure analysis is based strictly on real evaluation results across the 200-sample Golden Evaluation Set for `AmazonHelp`. No hypothetical or fabricated failure modes are included.
+This failure analysis is based strictly on real evaluation results across the 200-sample Golden Evaluation Set and the 60-sample Held-Out Test Set for `AmazonHelp`. No hypothetical or fabricated failure modes are included.
 
 ---
 
-## Summary of Empirical Errors
-- **Total Test Cases**: 200
-- **Intent Misclassifications**: 47 / 200 (Intent Accuracy: 76.5%, Macro F1: 0.7571)
+## Summary of Empirical Benchmark Errors
+- **Total Test Cases**: 200 (140 Development, 60 Held-Out Test)
+- **Intent Misclassifications**: 46 / 200 (Intent Accuracy: **77.0%**, Macro F1: **0.7650**)
 - **Escalation Discrepancies**:
-  - **False Auto-Handles (Critical / Dangerous)**: 6 cases (3.0% of total, 7.4% of escalation pool)
-  - **Unnecessary Escalations (Conservative Over-Escalation)**: 103 cases
-  - **Overall Escalation Accuracy**: 45.5%
+  - **False Auto-Handles (Critical / Dangerous Misses)**: **6 cases** (3 in Dev, 3 in Test; 91.04% Escalation Recall)
+  - **False Escalations (Unnecessary Human Handoffs)**: **71 cases** (down from 103 on original baseline, a **31.1% reduction**)
+  - **Overall Escalation Accuracy**: **61.50%** (up from 45.50% on original policy, a **+16.0% gain**)
+  - **Automation Rate**: **34.00%** (nearly doubled from 18.00%)
 
 ---
 
-## Top 5 Failure Modes
+## Top 5 Empirical Failure Modes
 
 ### Failure Mode 1: Lexical Saliency Bias (Brand/Perk Keyword Over-Shadowing)
 - **Category**: Intent Classification Error / Feature Entanglement
@@ -28,7 +29,7 @@ This failure analysis is based strictly on real evaluation results across the 20
   - **Gold Intent**: `delivery_delay_tracking`
   - **Expected Resolution**: Confirm regional carrier Sunday delivery availability for Prime-eligible zip codes.
 - **Why It Failed**:
-  The presence of the high-saliency token `"Prime"` triggered the heuristic prototype booster for `subscription_prime_issue`. The embedding model allowed the brand perk keyword to dominate the sentence semantics, ignoring the core syntactic verb phrase *"deliver packages on Sunday"*.
+  The presence of the high-saliency token `"Prime"` triggered the prototype booster for `subscription_prime_issue`. The embedding model allowed the brand perk keyword to dominate sentence semantics, ignoring the core syntactic verb phrase *"deliver packages on Sunday"*.
 - **Hypothesis for Improvement**:
   Implement dependency-parse or token-role attention weighting to distinguish when `"Prime"` functions as an adjective modifying a delivery service (`"Prime delivery"`) versus when it functions as the direct object of a subscription action (`"cancel Prime"`, `"charged for Prime"`).
 
@@ -70,38 +71,38 @@ This failure analysis is based strictly on real evaluation results across the 20
 
 ---
 
-### Failure Mode 4: Subtle Financial Ledger Discrepancy Causing False Auto-Handles
+### Failure Mode 4: Subtle Verbal Grievances Bypassing Escalation (False Auto-Handles)
 - **Category**: Critical Escalation Failure (Dangerous False Negative)
 - **Real Customer Message**:
-  > *"I received a refund confirmation email but the amount is $20 less than what I paid."* (Case ID #50)
+  > *"The customer service representative could barely understand basic English and hung up."* (Case ID #189)
 - **System Output**:
-  - **Predicted Intent**: `refund_return_request` (Confidence: 0.88)
-  - **Retrieved Precedent**: Similarity 0.64 (Historical standard return advice)
+  - **Predicted Intent**: `general_complaint_feedback` (Confidence: 0.63)
+  - **Top Historical Similarity**: 0.535 (Historical agent apologies)
   - **Decision**: `AUTO_HANDLE`
-  - **Decision Reason**: *"High-confidence intent match (0.88) with verified grounded historical resolution (0.64) under standard self-service policy."*
+  - **Decision Reason**: *"High-confidence match (0.63) with verified grounded resolution (0.53)."*
 - **Expected Behavior**:
   - **Gold Decision**: `ESCALATE`
-  - **Expected Resolution**: Disputed refund deduction (restocking fee or missing item deduction) requires a billing agent to inspect merchant transaction logs.
+  - **Expected Resolution**: Support quality grievance requiring supervisory audit of contact transcript.
 - **Why It Failed**:
-  The system recognized the overarching intent (`refund_return_request`) with high confidence and found a matching historical resolution explaining return timeframes. Because the query did not use overt red-flag words like *"lawyer"* or *"fraud"*, the escalation engine defaulted to `AUTO_HANDLE`, completely overlooking the numeric dispute clause (*"$20 less"*).
+  The query correctly classified as `general_complaint_feedback` and had similarity 0.535 (above the calibrated 0.45 threshold). However, because the customer expressed the misconduct with the words *"could barely understand basic English and hung up"* rather than explicit profanity or standard trigger keywords (*"supervisor"*, *"disrespectful"*, *"lawyer"*), the escalation rules missed it and allowed an automatic canned reply.
 - **Hypothesis for Improvement**:
-  Implement numeric/financial discrepancy pattern extractors (e.g., regex/NER for `"less than"`, `"short by"`, `"discrepancy"`, or `"deducted"` paired with currency entities) that force mandatory escalation whenever a customer disputes a transaction quantity or partial credit.
+  Expand agent conduct escalation triggers to encompass conversational termination events (`"hung up"`, `"disconnected the chat"`, `"closed window in my face"`) and communication barrier grievances.
 
 ---
 
-### Failure Mode 5: Conservative Over-Escalation via Rigid Similarity Floor
-- **Category**: False Positive Escalation / Low Automation Rate
+### Failure Mode 5: Borderline Uncertainty Safety Escalation (Conservative False Escalation)
+- **Category**: False Positive Escalation / Remaining Efficiency Bottleneck
 - **Real Customer Message**:
-  > *"Can you tell me which carrier is delivering order #112-9982736-2281920?"* (Case ID #4)
+  > *"My order has been stuck in 'Departed Facility' in Memphis for 5 days with no new scan."* (Case ID #2)
 - **System Output**:
-  - **Predicted Intent**: `delivery_delay_tracking` (Confidence: 0.85)
-  - **Top Historical Similarity**: 0.582
+  - **Predicted Intent**: `delivery_delay_tracking` (Confidence: 0.48)
+  - **Top Historical Similarity**: 0.573
   - **Decision**: `ESCALATE`
-  - **Decision Reason**: *"Top historical resolution similarity (0.58) is below grounding threshold (0.60)."*
+  - **Decision Reason**: *"Intent classification confidence (0.48) below threshold (0.50)."*
 - **Expected Behavior**:
   - **Gold Decision**: `AUTO_HANDLE`
-  - **Expected Resolution**: Direct customer to order tracking details where the assigned carrier name (USPS/UPS/AMZL) is listed.
+  - **Expected Resolution**: Advise customer of carrier transit buffer (up to 48 hours past ETA) and direct them to tracking updates in Your Orders.
 - **Why It Failed**:
-  The system applied a hard global threshold `RETRIEVAL_SIMILARITY_THRESHOLD = 0.60`. Because Twitter customer queries frequently include idiosyncratic phrasing or specific 17-digit order numbers that dilute dense cosine similarity against generic historical tweets, the similarity fell marginally short (0.58 vs 0.60), triggering an unnecessary escalation.
+  The intent prediction was 100% correct (`delivery_delay_tracking`), and the historical resolution was grounded (similarity 0.573). However, because the query contained descriptive geographical and facility phrasing (*"Departed Facility in Memphis for 5 days"*), softmax probability was slightly dispersed across 8 classes, yielding a confidence of 0.48—just 0.02 shy of the 0.50 threshold.
 - **Hypothesis for Improvement**:
-  Use intent-calibrated, dynamic similarity thresholds rather than a flat 0.60 floor. Simple informational queries (`product_inquiry_availability` and routine `delivery_delay_tracking`) should have lower grounding thresholds (~0.50), while financial and security intents maintain high thresholds (~0.70).
+  Implement confidence margin checking: if the top intent's score is >2x higher than the runner-up intent (even if absolute softmax is 0.48), treat it as a decisive plurality and allow auto-handling for benign self-service tracking inquiries.

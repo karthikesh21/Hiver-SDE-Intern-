@@ -1,0 +1,19 @@
+{
+  "intent_confidence_threshold": 0.5,
+  "retrieval_similarity_threshold": 0.45,
+  "safety_constraints": {
+    "max_dev_false_auto_handles": 3,
+    "min_escalation_recall": 0.9,
+    "min_auto_handle_rate": 45.0
+  },
+  "dev_benchmark_metrics": {
+    "accuracy": 0.6429,
+    "precision": 0.4835,
+    "recall": 0.9362,
+    "f1": 0.6377,
+    "false_auto_handles": 3,
+    "false_escalations": 47
+  },
+  "selection_method": "development_set_only",
+  "frozen_timestamp": "2026-09-10T23:00:00Z"
+}

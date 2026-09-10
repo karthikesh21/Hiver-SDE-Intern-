@@ -25,10 +25,10 @@ SELECTED_BRAND = os.getenv("SELECTED_BRAND", "AmazonHelp")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
-# Retrieval & Escalation Thresholds
+# Retrieval & Escalation Thresholds (Calibrated & Frozen on Development Set)
 RETRIEVAL_TOP_K = int(os.getenv("RETRIEVAL_TOP_K", 3))
-INTENT_CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", 0.65))
-RETRIEVAL_SIMILARITY_THRESHOLD = float(os.getenv("SIMILARITY_THRESHOLD", 0.60))
+INTENT_CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", 0.50))
+RETRIEVAL_SIMILARITY_THRESHOLD = float(os.getenv("SIMILARITY_THRESHOLD", 0.45))
 
 # Golden Set Paths
 GOLDEN_SET_PATH = DATA_DIR / "golden_set.csv"

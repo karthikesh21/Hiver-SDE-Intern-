@@ -105,6 +105,9 @@ class IntentClassifier:
         elif any(w in t_low for w in ['refund', 'return label', 'drop off']) and 'refund_return_request' in self.intent_labels:
             predicted_intent = 'refund_return_request'
             confidence = max(confidence, 0.88)
+        elif any(w in t_low for w in ['in stock', 'restock', 'compatible', 'compatibility', 'fit', 'specs', 'dimension', 'dimensions', 'weight capacity', 'voltage', '110v', 'sold directly']) and 'product_inquiry_availability' in self.intent_labels:
+            predicted_intent = 'product_inquiry_availability'
+            confidence = max(confidence, 0.88)
         elif any(w in t_low for w in ['charge twice', 'double charge', 'debit', 'unauthorized charge']) and 'payment_billing_issue' in self.intent_labels:
             predicted_intent = 'payment_billing_issue'
             confidence = max(confidence, 0.88)
