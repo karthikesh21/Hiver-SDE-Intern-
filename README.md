@@ -15,7 +15,7 @@
 - **Intent Accuracy:** 77.0%
 - **Intent Macro F1:** 0.7650
 - **Escalation Recall:** 91.04%
-- **Dangerous False Auto Handles:** 6 / 67 (8.96% hazard rate vs. 73.1% for ML baseline, 100% for Majority)
+- **Dangerous False Auto Handles:** 50 / 67 (8.96% hazard rate vs. 73.1% for ML baseline, 100% for Majority)
 - **Tests:** 22/22 passing
 - **Evaluation Runtime:** approximately 16 seconds on CPU
 
