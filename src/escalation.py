@@ -57,6 +57,8 @@ class EscalationEngine:
             "free trial", "advertised as a free", "cancelled prime", "billed again today",
             "billed again", "double billed", "two different credit cards",
             "charged twice", "double charge", "two charges", "unauthorized charge",
+            "unexpected charge", "unrecognized charge", "incorrect billing", "payment discrepancy",
+            "payment taken multiple", "charged but the order", "charged but order",
             "wire transfer", "overdraft", "promised a 1-month", "promised a refund",
             "promised me a", "where is my refund of"
         ]

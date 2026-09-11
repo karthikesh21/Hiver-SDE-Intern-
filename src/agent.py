@@ -66,19 +66,21 @@ class CustomerSupportAgent:
             top_k=self.top_k
         )
         
-        # 3. Grounded Reply Generation
-        reply = self.generator.generate(
-            customer_message=customer_message,
-            retrieved_examples=retrieved,
-            intent=intent
-        )
-        
-        # 4. Escalation Policy Decision
+        # 3. Escalation Policy Decision
         escalation = self.escalation_engine.evaluate(
             customer_message=customer_message,
             intent=intent,
             intent_confidence=intent_confidence,
             retrieved_examples=retrieved
+        )
+        
+        # 4. Grounded Reply Generation
+        reply = self.generator.generate(
+            customer_message=customer_message,
+            retrieved_examples=retrieved,
+            intent=intent,
+            decision=escalation["decision"],
+            decision_reason=escalation["decision_reason"]
         )
         
         # 5. Format Structured Agent Response

@@ -1,0 +1,2 @@
+# Directory for external raw dataset downloads if needed.
+# The preprocessed, zero-leakage historical support data is already bundled in data/processed/.

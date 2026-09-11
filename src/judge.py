@@ -20,6 +20,7 @@ import numpy as np
 import scipy.stats as stats
 from src.config import (
     RESULTS_DIR,
+    EVALUATION_DIR,
     OPENAI_API_KEY,
     OPENAI_MODEL,
     RANDOM_SEED
@@ -248,18 +249,21 @@ def run_human_agreement_experiment(sample_size: int = 40):
     # Identify Notable Disagreements (diff >= 0.5)
     disagreements = [c for c in comparison_records if c["absolute_difference"] >= 0.5]
     
-    # Save Machine-Readable Results
+    # Save Machine-Readable Results to both results/ and evaluation/
+    judge_payload = {
+        "spearman_correlation": round(float(spearman_corr), 4),
+        "spearman_pvalue": float(spearman_pval),
+        "pearson_correlation": round(float(pearson_corr), 4),
+        "mean_absolute_difference": round(mean_abs_diff, 4),
+        "exact_agreement_pct": round(exact_match_pct, 2),
+        "near_agreement_pct": round(near_match_pct, 2),
+        "sample_size": len(sampled_cases),
+        "records": comparison_records
+    }
     with open(RESULTS_DIR / "judge_ratings.json", "w", encoding="utf-8") as f:
-        json.dump({
-            "spearman_correlation": round(float(spearman_corr), 4),
-            "spearman_pvalue": float(spearman_pval),
-            "pearson_correlation": round(float(pearson_corr), 4),
-            "mean_absolute_difference": round(mean_abs_diff, 4),
-            "exact_agreement_pct": round(exact_match_pct, 2),
-            "near_agreement_pct": round(near_match_pct, 2),
-            "sample_size": len(sampled_cases),
-            "records": comparison_records
-        }, f, indent=2)
+        json.dump(judge_payload, f, indent=2)
+    with open(EVALUATION_DIR / "judge_ratings.json", "w", encoding="utf-8") as f:
+        json.dump(judge_payload, f, indent=2)
         
     # Write Markdown Agreement Report
     md_content = f"""# LLM-as-Judge vs. Human Agreement Analysis
@@ -308,8 +312,10 @@ The following cases exhibited the largest discrepancies ($|\Delta| \ge 0.5$) bet
 
     with open(RESULTS_DIR / "judge_human_agreement.md", "w", encoding="utf-8") as f:
         f.write(md_content)
+    with open(EVALUATION_DIR / "judge_human_agreement.md", "w", encoding="utf-8") as f:
+        f.write(md_content)
         
-    print(f"Human agreement analysis completed. Report saved to {RESULTS_DIR / 'judge_human_agreement.md'}")
+    print(f"Human agreement analysis completed. Report saved to {RESULTS_DIR / 'judge_human_agreement.md'} and {EVALUATION_DIR / 'judge_human_agreement.md'}")
     print(f"Spearman Rho: {spearman_corr:.4f} | Pearson R: {pearson_corr:.4f} | MAD: {mean_abs_diff:.3f}")
 
 if __name__ == "__main__":

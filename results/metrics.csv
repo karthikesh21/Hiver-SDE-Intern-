@@ -1,4 +1,4 @@
-Model,Intent Accuracy,Intent Macro F1,Escalation Accuracy,Escalation Precision,Escalation Recall,False Auto-Handles (Dangerous),Retrieval Recall@3
-Trivial Baseline,0.125,0.0278,0.665,0.0,0.0,67,N/A
-Simple ML Baseline (TF-IDF+LogReg),0.445,0.4344,0.655,0.4737,0.2687,49,N/A
-Main AI Customer Support Agent,0.77,0.765,0.615,0.4621,0.9104,6,0.455
+System,Intent Accuracy,Intent Macro Precision,Intent Macro Recall,Intent Macro F1,Decision Accuracy,Decision Precision,Decision Recall,Decision F1,False Auto-Handles (Critical Hazard),Retrieval Recall@3
+Majority Baseline,0.125,0.0156,0.125,0.0278,0.665,0.0,0.0,0.0,67,N/A
+TF IDF + Logistic Regression,0.445,0.7487,0.445,0.4344,0.655,0.4737,0.2687,0.3429,49,N/A
+My AI Agent,0.77,0.7759,0.77,0.765,0.615,0.4621,0.9104,0.6131,6,0.455

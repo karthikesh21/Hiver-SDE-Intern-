@@ -15,8 +15,14 @@ Draft a concise, empathetic, and professional reply to the customer message belo
 CRITICAL INSTRUCTIONS:
 1. GROUNDING: Use ONLY information supported by the historical examples provided below.
 2. NO HALLUCINATION: Do NOT invent company policies, refund amounts, order details, or claim actions were completed when they were not.
-3. NO FAKE LINKS: Do NOT fabricate URLs or hyperlinks. If a link is referenced in evidence, refer to it generically as "Your Orders" or "the Amazon Help link".
+3. NO FAKE LINKS: Do NOT fabricate URLs or hyperlinks. If a link is referenced in evidence, refer to it generically as "the support link in Your Orders" or "Your Orders".
 4. ESCALATION SAFETY: If the historical evidence does not provide a clear, safe resolution for the specific problem, advise the customer that their issue requires specialist review and guide them accordingly.
+5. FINANCIAL DISPUTES: For billing and charge disputes (duplicate charges, unauthorized charges, unexpected debits, payment discrepancies):
+   - Directly acknowledge the customer's specific stated problem with empathy (e.g. "We understand your concern about being charged twice for the same order.").
+   - Do NOT question or contradict the customer's claim (never suggest the charge is merely an authorization hold).
+   - Do NOT guess causes or diagnose charges as pending authorizations.
+   - Do NOT promise refunds or claim an account has already been reviewed or an action already taken.
+   - Direct the customer to check Your Orders or contact an Amazon customer specialist with order details for account review.
 
 Retrieved Historical Examples:
 {evidence_block}
@@ -26,9 +32,29 @@ Current Customer Message:
 
 Generate a professional customer support response:"""
 
+def sanitize_historical_text(text: str) -> str:
+    """Clean Twitter noise, customer names, agent signatures, and multipart markers."""
+    # Strip agent initials at end e.g. ^CC, ^HD, ^RA, ^LB
+    cleaned = re.sub(r'\^[A-Z]{2,3}\b', '', text)
+    # Strip multi-part tweet markers e.g. (1/2), (2/2), 1/2, 2/2
+    cleaned = re.sub(r'\(?\b[1-3]/[2-3]\)?', '', cleaned)
+    # Strip Twitter-specific phrases
+    cleaned = re.sub(r'our (twitter|page) is (visible to )?public\b.*', '', cleaned, flags=re.IGNORECASE)
+    # Strip leading greetings with names: "Hi David, ", "Hey Shiva! ", "Sorry to hear that, Shireen! "
+    cleaned = re.sub(r'^(hi|hello|hey|dear)\s+[a-z]+[,\.!:]*\s*', '', cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r'^(sorry to hear that|apologies for the delay|i\'m sorry),\s+[a-z]+[,\.!:]*\s*', r'\1, ', cleaned, flags=re.IGNORECASE)
+    # Strip trailing or comma names e.g. ", Will!" or ", Julie!" or ", Shiva."
+    cleaned = re.sub(r',\s+[A-Z][a-z]+([!\.]|\s*$)', r'\1', cleaned)
+    # Safe link replacement
+    cleaned = cleaned.replace('[link]', 'the support link in Your Orders')
+    # Collapse multiple spaces
+    cleaned = re.sub(r'\s{2,}', ' ', cleaned).strip()
+    return cleaned
+
 class GroundedReplyGenerator:
     """
-    Grounded response generator that enforces historical adherence and anti-hallucination rules.
+    Grounded response generator that enforces historical adherence and anti-hallucination rules,
+    with dedicated safe handling for financial and billing disputes.
     """
     def __init__(self, model_name: str = OPENAI_MODEL):
         self.model_name = model_name
@@ -42,16 +68,103 @@ class GroundedReplyGenerator:
             blocks.append(f"Example {i}:\nCustomer Issue: {cust}\nHistorical Resolution: {res}")
         return "\n\n".join(blocks) if blocks else "No historical evidence found."
 
+    def is_financial_dispute(
+        self,
+        customer_message: str,
+        intent: str = "",
+        decision: Optional[str] = None
+    ) -> bool:
+        """Identify if inquiry represents a financial, billing, or charge dispute."""
+        msg_lower = customer_message.lower()
+        dispute_patterns = [
+            "charged twice", "duplicate charge", "double charge", "two charges",
+            "charged 2 times", "billed twice", "double billed", "charged multiple times",
+            "payment taken multiple", "unexpected charge", "unrecognized charge",
+            "unknown charge", "unauthorized charge", "fraudulent charge", "mystery charge",
+            "extra charge", "incorrect billing", "billed wrong", "overcharged",
+            "wrong amount", "payment discrepancy", "billing discrepancy",
+            "charged but", "charged and", "paid but", "took my money", "money deducted",
+            "charged without", "less than what i paid", "short by", "unauthorized transaction",
+            "charged for an order", "charged for the same", "billed for the same"
+        ]
+        if any(p in msg_lower for p in dispute_patterns):
+            return True
+        if intent == "payment_billing_issue" and any(k in msg_lower for k in [
+            "charge", "billed", "debit", "fee", "deducted", "paid", "money", "twice", "double", "unauthorized"
+        ]):
+            return True
+        return False
+
+    def generate_financial_dispute_reply(
+        self,
+        customer_message: str,
+        retrieved_examples: List[Dict[str, Any]],
+        decision: Optional[str] = "ESCALATE"
+    ) -> str:
+        """
+        Synthesize an empathetic, safe, non-hallucinatory reply for financial disputes.
+        Directly acknowledges the customer's specific problem, avoids speculative diagnoses
+        (e.g., authorization holds), makes no unsupported refund promises, and guides customer
+        to account review.
+        """
+        msg_lower = customer_message.lower()
+        
+        # 1. Directly and specifically acknowledge the customer's stated issue
+        if re.search(r'\b(charged twice for the same order|charged twice for the same item)\b', msg_lower):
+            acknowledgement = "We understand your concern about being charged twice for the same order."
+        elif "subscription" in msg_lower and any(w in msg_lower for w in ["twice", "double", "two charges"]):
+            acknowledgement = "We understand your concern about being charged twice for your subscription."
+        elif re.search(r'\b(charged twice|billed twice|charged 2 times|billed 2 times)\b', msg_lower):
+            acknowledgement = "We understand your concern about being charged twice."
+        elif re.search(r'\b(duplicate charge|double charge|two charges|double billed)\b', msg_lower):
+            acknowledgement = "We understand your concern regarding this duplicate charge."
+        elif re.search(r'\b(charged multiple times|payment taken multiple times|taken multiple times)\b', msg_lower):
+            acknowledgement = "We understand your concern about being charged multiple times."
+        elif re.search(r'\b(unauthorized charge|unauthorized transaction|unauthorized payment|fraudulent charge)\b', msg_lower):
+            acknowledgement = "We understand your concern regarding this unauthorized charge."
+        elif re.search(r'\b(unexpected charge|unrecognized charge|unknown charge|mystery charge|extra charge)\b', msg_lower):
+            acknowledgement = "We understand your concern regarding this unexpected charge."
+        elif re.search(r'\bcharged\b', msg_lower) and re.search(r'\b(not received|haven\'t received|never received|missing|cancelled|canceled)\b', msg_lower):
+            acknowledgement = "We understand your concern about being charged for an order you have not received."
+        elif re.search(r'\b(payment discrepancy|billing discrepancy|incorrect billing|overcharged|billed wrong|wrong amount)\b', msg_lower):
+            acknowledgement = "We understand your concern regarding this payment discrepancy."
+        else:
+            acknowledgement = "We understand your concern regarding this charge."
+
+        # 2. Guidance next step (safe, transparent, customer-facing)
+        if "unauthorized" in msg_lower or "fraud" in msg_lower:
+            guidance = (
+                "Please check Your Orders or contact an Amazon customer specialist immediately "
+                "with your account details so they can investigate the unauthorized activity and assist you."
+            )
+        elif "missing" in msg_lower or "not received" in msg_lower or "cancel" in msg_lower:
+            guidance = (
+                "Please check Your Orders or contact an Amazon customer specialist with your "
+                "order details so they can locate the transaction and assist you."
+            )
+        else:
+            guidance = (
+                "Please check Your Orders or contact an Amazon customer specialist with your "
+                "order details so they can review the charges and help resolve the issue."
+            )
+
+        return f"{acknowledgement} {guidance}"
+
     def generate_local_grounded_reply(
         self,
         customer_message: str,
         retrieved_examples: List[Dict[str, Any]],
-        intent: str
+        intent: str,
+        decision: Optional[str] = None
     ) -> str:
         """
         Locally synthesizes a grounded support response derived directly from the
         top retrieved historical resolutions without requiring external API tokens.
         """
+        # Targeted rule: financial disputes require safe acknowledgment without speculative diagnosis
+        if self.is_financial_dispute(customer_message, intent, decision):
+            return self.generate_financial_dispute_reply(customer_message, retrieved_examples, decision)
+
         if not retrieved_examples:
             return (
                 "Thank you for contacting Amazon Help. We want to make sure your issue is handled accurately. "
@@ -63,9 +176,7 @@ class GroundedReplyGenerator:
         top_sim = top_ex.get("similarity", 0.0)
         
         # Clean specific customer names or twitter noise from historical resolution
-        cleaned_res = re.sub(r'^[A-Z][a-z]+,\s*', '', top_resolution) # Strip leading names like "Hi David, "
-        cleaned_res = re.sub(r'\^[A-Z]{2,3}$', '', cleaned_res).strip() # Strip agent initials like "^CC"
-        cleaned_res = cleaned_res.replace('[link]', 'the link in Your Orders')
+        cleaned_res = sanitize_historical_text(top_resolution)
         
         # Synthesize professional grounded reply
         openings = {
@@ -94,7 +205,9 @@ class GroundedReplyGenerator:
         self,
         customer_message: str,
         retrieved_examples: List[Dict[str, Any]],
-        intent: str
+        intent: str,
+        decision: Optional[str] = None,
+        decision_reason: Optional[str] = None
     ) -> str:
         """
         Generate a customer-facing support reply using LLM API if available,
@@ -125,7 +238,7 @@ class GroundedReplyGenerator:
             except Exception as e:
                 print(f"[ReplyGenerator] LLM API call error: {e}. Falling back to local grounded synthesis.")
                 
-        return self.generate_local_grounded_reply(customer_message, retrieved_examples, intent)
+        return self.generate_local_grounded_reply(customer_message, retrieved_examples, intent, decision=decision)
 
 if __name__ == "__main__":
     gen = GroundedReplyGenerator()

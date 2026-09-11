@@ -265,9 +265,11 @@ def build_golden_evaluation_set():
             golden_rows.append({
                 "id": sample_id,
                 "customer_message": msg,
+                "gold_intent": intent,
                 "intent": intent,
-                "expected_resolution": reason,
+                "gold_decision": decision,
                 "should_escalate": decision,
+                "expected_resolution": reason,
                 "conversation_id": cid,
                 "source": "curated_evaluation_benchmark"
             })
@@ -276,7 +278,17 @@ def build_golden_evaluation_set():
     print(f"Total golden evaluation samples created: {len(golden_rows)}")
     
     # Save golden evaluation set to CSV
-    fieldnames = ["id", "customer_message", "intent", "expected_resolution", "should_escalate", "conversation_id", "source"]
+    fieldnames = [
+        "id",
+        "customer_message",
+        "gold_intent",
+        "intent",
+        "gold_decision",
+        "should_escalate",
+        "expected_resolution",
+        "conversation_id",
+        "source"
+    ]
     with open(GOLDEN_SET_PATH, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()

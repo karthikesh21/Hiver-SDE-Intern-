@@ -223,24 +223,41 @@ From the final benchmark evaluation, five primary failure modes emerge:
 
 ---
 
-## 9. What is Misleading About My Headline Number?
+## What is misleading about my headline number?
 
-In technical hiring evaluations, engineering credibility is built on transparency. While the headline **61.50% Escalation Accuracy**, **77.00% Intent Accuracy**, **91.04% Escalation Recall**, and **34.00% Automation Rate** demonstrate strong engineering progress, presenting these numbers without qualification would be fundamentally misleading. Here is why:
+In technical hiring evaluations, engineering credibility is built on transparency. While the headline **77.00% Intent Accuracy**, **0.7650 Macro F1**, **91.04% Escalation Recall**, and **6/67 Dangerous False Auto-Handles** demonstrate solid engineering progress over baselines, **77% intent accuracy does NOT mean 77% end-to-end customer resolution quality**.
 
-### 9.1 Split Size and Statistical Variance (N=60 Held-Out Test Set)
-A held-out test set of 60 examples, while methodologically essential for preventing tuning leakage, carries an inherent binomial 95% confidence interval of approximately $\pm 12.6\%$ on accuracy. A measured 55.0% accuracy on the test set represents a true population accuracy between 42.4% and 67.6%. While our evaluation is honest, small sample sizes mean individual customer queries disproportionately influence percentage figures.
+Presenting these headline figures without qualification would be fundamentally misleading for several critical reasons:
 
-### 9.2 Artificial Class Uniformity vs. Real-World Power Laws
-Our golden benchmark is perfectly stratified (12.5% per intent). In actual Amazon operations, real-world customer queries follow an extreme power-law distribution: `delivery_delay_tracking` accounts for nearly 40% of inbound volume, while `account_login_access` or `subscription_prime_issue` account for under 5%. In production, an agent that excels on delivery tracking but struggles on account lockouts would achieve a much higher overall accuracy than reported here, but would mask severe localized failure rates.
+### 1. Intent Accuracy vs. End-to-End Reply Quality
+Intent classification only measures whether the system correctly clustered a customer's query into one of 8 broad categories. It does not measure whether the generated response was factually correct, actionable, empathetic, or resolved the customer's problem. A system can achieve 100% intent accuracy while generating unhelpful or hallucinated replies.
 
-### 9.3 Intent Accuracy Alone Does Not Prove Safe Automation
-A system can achieve 90%+ intent accuracy and still fail catastrophically in production. For example, in Case ID #50 (*"I received a refund confirmation email but the amount is $20 less than what I paid"*), the intent classifier predicted `refund_return_request` with 88% confidence (which was classified as "correct" by intent accuracy metrics). However, because it was a numeric dispute rather than a routine return, automating it produced a critical failure. Intent accuracy measures topical clustering; it does not measure whether an issue can be safely resolved without human eyes.
+### 2. Golden Set Size and Statistical Variance
+The golden evaluation benchmark contains exactly 200 examples (140 development, 60 held-out test). While rigorously curated and zero-leakage enforced, a sample of 200 (and especially a test partition of 60) carries a binomial 95% confidence interval of approximately $\pm 6\%$ to $\pm 12\%$. Individual customer edge cases have a noticeable mathematical impact on percentages.
 
-### 9.4 Social Media Deflection Bias in the Knowledge Base
-The historical training corpus represents public Twitter customer interactions from 2017. Historical Twitter agents routinely responded with standard deflections (*"Please DM us your email or contact us at [link]"*) rather than resolving complex issues directly in the public feed. Our retriever therefore inherits this deflection bias, making generated replies favor generic links over deeper in-channel resolution.
+### 3. Intentional Class Balancing vs. Real-World Power Laws
+Our golden benchmark is intentionally balanced with 25 examples per intent across 8 classes (12.5% each). In real-world customer support on Twitter, `delivery_delay_tracking` alone accounts for ~87% of all inquiries, while account security or payment disputes account for less than 3%. A naive model optimized solely on production volume would achieve high overall accuracy simply by guessing delivery tracking, yet fail catastrophically on low-frequency high-risk cases.
 
-### 9.5 Automated Judge Generosity vs. Human Scrutiny
-Our LLM-as-Judge scored generated replies at an average of 4.42 / 5.0. However, our human agreement study revealed that the judge systematically awards high scores to generic politeness and standard self-service links. Human annotators, by contrast, severely penalize generic responses when applied to high-anxiety edge cases. An automated headline judge score of 4.4 / 5.0 does not imply that 88% of real customers would be satisfied with the experience.
+### 4. Retrieval Limitations
+Bi-encoder semantic embeddings (`all-MiniLM-L6-v2`) compress entire sentences into 384-dimensional dense vectors. While excellent for fuzzy semantic paraphrasing, bi-encoders can lose fine-grained lexical signals such as order IDs, dollar amounts, tracking status distinctions, or negation tokens, occasionally ranking a superficially similar but operationally irrelevant historical case.
+
+### 5. Imperfect Historical Evidence & Deflection Bias
+The historical knowledge base consists of public Twitter interactions from 2017. Pre-2018 Twitter agents frequently replied with canned deflections (*"Please DM us your order number or visit [link]"*) rather than resolving complex issues directly in the public channel. The retriever and reply generator inherit this bias, favoring generic self-service links over comprehensive in-channel solutions.
+
+### 6. Escalation Tradeoffs: Cost Asymmetry
+Escalation is inherently cost-asymmetric. The business and safety cost of a **false auto-handle** (telling a customer who was double-charged or locked out of their account that everything is fine) is catastrophic in churn, financial liability, and brand trust. In contrast, the cost of a **false escalation** (routing a routine shipping query to a human agent) is merely a minor human labor overhead. Our system intentionally trades nominal decision accuracy (61.50%) to achieve 91.04% escalation recall.
+
+### 7. LLM Judge Limitations
+Automated LLM evaluation rubrics scored responses with an average rating of 4.42 / 5.0. However, our human-judge agreement study (Spearman $\rho = 0.3844$, Pearson $r = 0.3134$) revealed that automated judges systematically reward polite tone and valid link templates, whereas human annotators harshly penalize canned deflections on high-anxiety edge cases. An automated judge score does not guarantee genuine customer satisfaction.
+
+### 8. Confidence Calibration Gaps
+Although temperature scaling ($T=0.12$) sharpens the prototype cosine similarities, softmax probabilities remain an approximation of true posterior confidence. Customers expressing routine questions using novel slang or complex narrative paragraphs may produce diffuse probabilities (<0.50), triggering unnecessary escalations despite having a simple question.
+
+### 9. Unseen Production Intents
+The enterprise taxonomy defines 8 specific customer support intents. Real-world e-commerce involves hundreds of unmodeled edge intents (e.g., gift registry glitches, Amazon Web Services billing, digital Kindle licensing, B2B tax exemption). In production, completely out-of-distribution queries would be forced into the nearest centroid if not caught by our fallback escalation rules.
+
+### 10. Safety vs. Automation Tradeoff & Dangerous False Auto-Handles
+The **Dangerous False Auto-Handle Rate** (achieving 6 / 67 or 8.96% on our benchmark, compared to 73.1% for the ML baseline and 100% for the Majority baseline) is a vital operational safety metric because it quantifies the system's ability to prevent high-risk customer failures from being mistakenly automated. However, it is **not the sole or universal "north star"** metric. A completely trivial system that escalates 100% of all customer messages would achieve a perfect 0% dangerous false auto-handle rate, but would provide 0% automation utility and collapse human support queues. A viable production system must balance automation rate (currently 34.0%) against false auto-handle risk.
 
 ---
 

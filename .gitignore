@@ -1,6 +1,27 @@
+# Virtual environments
 .venv/
+venv/
+ENV/
+env/
+
+# Python byte-code & cache
 __pycache__/
-*.pyc
-.env
+*.py[cod]
+*$py.class
 .pytest_cache/
+
+# Environment variables & secrets
+.env
+*.pem
+*.key
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Logs
 *.log
+
+# Raw dataset archives (not committed to git; preprocessed resolutions are bundled in data/processed/)
+data/raw/*
+!data/raw/.gitkeep

@@ -13,6 +13,9 @@ RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 RESULTS_DIR = PROJECT_ROOT / "results"
 REPORT_DIR = PROJECT_ROOT / "report"
+EVALUATION_DIR = PROJECT_ROOT / "evaluation"
+EVALUATION_DIR.mkdir(parents=True, exist_ok=True)
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 # Load environment variables
 load_dotenv(PROJECT_ROOT / ".env")

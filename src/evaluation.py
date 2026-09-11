@@ -26,6 +26,7 @@ from sklearn.metrics import (
 from src.config import (
     GOLDEN_SET_PATH,
     RESULTS_DIR,
+    EVALUATION_DIR,
     INTENTS_PATH,
     RANDOM_SEED
 )
@@ -76,6 +77,8 @@ class EvaluationHarness:
         
     def evaluate_intent_classification(self, y_true: List[str], y_pred: List[str]) -> Dict[str, Any]:
         acc = accuracy_score(y_true, y_pred)
+        macro_prec = precision_score(y_true, y_pred, labels=self.intent_labels, average='macro', zero_division=0)
+        macro_rec = recall_score(y_true, y_pred, labels=self.intent_labels, average='macro', zero_division=0)
         macro_f1 = f1_score(y_true, y_pred, labels=self.intent_labels, average='macro', zero_division=0)
         weighted_f1 = f1_score(y_true, y_pred, labels=self.intent_labels, average='weighted', zero_division=0)
         
@@ -98,6 +101,8 @@ class EvaluationHarness:
             
         return {
             "accuracy": round(acc, 4),
+            "macro_precision": round(macro_prec, 4),
+            "macro_recall": round(macro_rec, 4),
             "macro_f1": round(macro_f1, 4),
             "weighted_f1": round(weighted_f1, 4),
             "per_intent": per_intent_metrics
@@ -125,14 +130,24 @@ class EvaluationHarness:
         recall_esc = recall_score(y_true, y_pred, pos_label="ESCALATE", zero_division=0)
         f1_esc = f1_score(y_true, y_pred, pos_label="ESCALATE", zero_division=0)
         
+        macro_prec = precision_score(y_true, y_pred, average="macro", zero_division=0)
+        macro_rec = recall_score(y_true, y_pred, average="macro", zero_division=0)
+        macro_f1 = f1_score(y_true, y_pred, average="macro", zero_division=0)
+        
         false_auto_handle_rate = fn / max((tp + fn), 1)
         unnecessary_escalation_rate = fp / max((tn + fp), 1)
         
         return {
             "accuracy": round(acc, 4),
+            "precision": round(precision_esc, 4),
+            "recall": round(recall_esc, 4),
+            "f1": round(f1_esc, 4),
             "escalate_precision": round(precision_esc, 4),
             "escalate_recall": round(recall_esc, 4),
             "escalate_f1": round(f1_esc, 4),
+            "macro_precision": round(macro_prec, 4),
+            "macro_recall": round(macro_rec, 4),
+            "macro_f1": round(macro_f1, 4),
             "true_auto_handle": int(tn),
             "false_escalate": int(fp),
             "false_auto_handle_critical": int(fn),
@@ -144,8 +159,8 @@ class EvaluationHarness:
     def run_all_evaluations(self) -> Dict[str, Any]:
         print(f"Starting benchmark evaluation over {len(self.golden_df)} golden set examples...")
         
-        y_true_intent = self.golden_df["intent"].tolist()
-        y_true_escalate = self.golden_df["should_escalate"].tolist()
+        y_true_intent = (self.golden_df["gold_intent"] if "gold_intent" in self.golden_df.columns else self.golden_df["intent"]).tolist()
+        y_true_escalate = (self.golden_df["gold_decision"] if "gold_decision" in self.golden_df.columns else self.golden_df["should_escalate"]).tolist()
         customer_messages = self.golden_df["customer_message"].tolist()
         gold_convo_ids = set(self.golden_df["conversation_id"].tolist())
         
@@ -209,16 +224,70 @@ class EvaluationHarness:
             "intent_retrieval_recall@3": round(float(np.mean(retrieval_recall_at_3)), 4)
         }
         
+        # Confusion matrix for Main Agent
+        cm_matrix = confusion_matrix(y_true_intent, agent_intent_pred, labels=self.intent_labels).tolist()
+        
         # Save Confusion Matrix Plot for Main Agent
-        cm_path = RESULTS_DIR / "confusion_matrix.png"
+        cm_path_results = RESULTS_DIR / "confusion_matrix.png"
+        cm_path_eval = EVALUATION_DIR / "confusion_matrix.png"
         plot_and_save_confusion_matrix(
             y_true_intent,
             agent_intent_pred,
             labels=self.intent_labels,
             title="Main AI Agent Intent Confusion Matrix (AmazonHelp)",
-            output_path=cm_path
+            output_path=cm_path_results
         )
-        print(f"Saved confusion matrix plot to {cm_path}")
+        plot_and_save_confusion_matrix(
+            y_true_intent,
+            agent_intent_pred,
+            labels=self.intent_labels,
+            title="Main AI Agent Intent Confusion Matrix (AmazonHelp)",
+            output_path=cm_path_eval
+        )
+        print(f"Saved confusion matrix plot to {cm_path_results} and {cm_path_eval}")
+        
+        # Generate Comparative comparison_table / csv_rows
+        csv_rows = [
+            {
+                "System": "Majority Baseline",
+                "Intent Accuracy": trivial_intent_metrics["accuracy"],
+                "Intent Macro Precision": trivial_intent_metrics["macro_precision"],
+                "Intent Macro Recall": trivial_intent_metrics["macro_recall"],
+                "Intent Macro F1": trivial_intent_metrics["macro_f1"],
+                "Decision Accuracy": trivial_esc_metrics["accuracy"],
+                "Decision Precision": trivial_esc_metrics["precision"],
+                "Decision Recall": trivial_esc_metrics["recall"],
+                "Decision F1": trivial_esc_metrics["f1"],
+                "False Auto-Handles (Critical Hazard)": trivial_esc_metrics["false_auto_handle_critical"],
+                "Retrieval Recall@3": "N/A"
+            },
+            {
+                "System": "TF IDF + Logistic Regression",
+                "Intent Accuracy": ml_intent_metrics["accuracy"],
+                "Intent Macro Precision": ml_intent_metrics["macro_precision"],
+                "Intent Macro Recall": ml_intent_metrics["macro_recall"],
+                "Intent Macro F1": ml_intent_metrics["macro_f1"],
+                "Decision Accuracy": ml_esc_metrics["accuracy"],
+                "Decision Precision": ml_esc_metrics["precision"],
+                "Decision Recall": ml_esc_metrics["recall"],
+                "Decision F1": ml_esc_metrics["f1"],
+                "False Auto-Handles (Critical Hazard)": ml_esc_metrics["false_auto_handle_critical"],
+                "Retrieval Recall@3": "N/A"
+            },
+            {
+                "System": "My AI Agent",
+                "Intent Accuracy": agent_intent_metrics["accuracy"],
+                "Intent Macro Precision": agent_intent_metrics["macro_precision"],
+                "Intent Macro Recall": agent_intent_metrics["macro_recall"],
+                "Intent Macro F1": agent_intent_metrics["macro_f1"],
+                "Decision Accuracy": agent_esc_metrics["accuracy"],
+                "Decision Precision": agent_esc_metrics["precision"],
+                "Decision Recall": agent_esc_metrics["recall"],
+                "Decision F1": agent_esc_metrics["f1"],
+                "False Auto-Handles (Critical Hazard)": agent_esc_metrics["false_auto_handle_critical"],
+                "Retrieval Recall@3": retrieval_metrics["intent_retrieval_recall@3"]
+            }
+        ]
         
         # Compile Combined Benchmark Results
         summary_results = {
@@ -227,6 +296,11 @@ class EvaluationHarness:
                 "num_classes": len(self.intent_labels),
                 "auto_handle_count": sum(1 for e in y_true_escalate if e == "AUTO_HANDLE"),
                 "escalate_count": sum(1 for e in y_true_escalate if e == "ESCALATE")
+            },
+            "comparison_table": csv_rows,
+            "intent_confusion_matrix": {
+                "labels": self.intent_labels,
+                "matrix": cm_matrix
             },
             "models": {
                 "trivial_baseline": {
@@ -245,71 +319,66 @@ class EvaluationHarness:
             }
         }
         
-        # Save metrics.json
-        json_path = RESULTS_DIR / "metrics.json"
-        with open(json_path, "w", encoding="utf-8") as f:
+        # Save results.json to evaluation/ and metrics.json to results/
+        eval_json_path = EVALUATION_DIR / "results.json"
+        with open(eval_json_path, "w", encoding="utf-8") as f:
             json.dump(summary_results, f, indent=2)
-        print(f"Saved complete metrics to {json_path}")
+        print(f"Saved evaluation results to {eval_json_path}")
         
-        # Generate Comparative metrics.csv
-        csv_rows = [
-            {
-                "Model": "Trivial Baseline",
-                "Intent Accuracy": trivial_intent_metrics["accuracy"],
-                "Intent Macro F1": trivial_intent_metrics["macro_f1"],
-                "Escalation Accuracy": trivial_esc_metrics["accuracy"],
-                "Escalation Precision": trivial_esc_metrics["escalate_precision"],
-                "Escalation Recall": trivial_esc_metrics["escalate_recall"],
-                "False Auto-Handles (Dangerous)": trivial_esc_metrics["false_auto_handle_critical"],
-                "Retrieval Recall@3": "N/A"
-            },
-            {
-                "Model": "Simple ML Baseline (TF-IDF+LogReg)",
-                "Intent Accuracy": ml_intent_metrics["accuracy"],
-                "Intent Macro F1": ml_intent_metrics["macro_f1"],
-                "Escalation Accuracy": ml_esc_metrics["accuracy"],
-                "Escalation Precision": ml_esc_metrics["escalate_precision"],
-                "Escalation Recall": ml_esc_metrics["escalate_recall"],
-                "False Auto-Handles (Dangerous)": ml_esc_metrics["false_auto_handle_critical"],
-                "Retrieval Recall@3": "N/A"
-            },
-            {
-                "Model": "Main AI Customer Support Agent",
-                "Intent Accuracy": agent_intent_metrics["accuracy"],
-                "Intent Macro F1": agent_intent_metrics["macro_f1"],
-                "Escalation Accuracy": agent_esc_metrics["accuracy"],
-                "Escalation Precision": agent_esc_metrics["escalate_precision"],
-                "Escalation Recall": agent_esc_metrics["escalate_recall"],
-                "False Auto-Handles (Dangerous)": agent_esc_metrics["false_auto_handle_critical"],
-                "Retrieval Recall@3": retrieval_metrics["intent_retrieval_recall@3"]
-            }
-        ]
+        results_json_path = RESULTS_DIR / "metrics.json"
+        with open(results_json_path, "w", encoding="utf-8") as f:
+            json.dump(summary_results, f, indent=2)
+        print(f"Saved complete metrics to {results_json_path}")
         
-        csv_path = RESULTS_DIR / "metrics.csv"
-        pd.DataFrame(csv_rows).to_csv(csv_path, index=False)
-        print(f"Saved comparative metrics table to {csv_path}")
+        # Save metrics.csv & comparison_metrics.csv
+        pd.DataFrame(csv_rows).to_csv(EVALUATION_DIR / "comparison_metrics.csv", index=False)
+        pd.DataFrame(csv_rows).to_csv(RESULTS_DIR / "comparison_metrics.csv", index=False)
+        pd.DataFrame(csv_rows).to_csv(RESULTS_DIR / "metrics.csv", index=False)
+        print(f"Saved comparative metrics tables to {EVALUATION_DIR} and {RESULTS_DIR}")
         
         # Print Consolidated Report
-        print("\n" + "=" * 90)
+        print("\n" + "=" * 95)
         print("CONSOLIDATED BENCHMARK SUMMARY (Golden Set N=200)")
-        print("=" * 90)
-        print(f"{'System / Model':<35} | {'Intent Acc':<11} | {'Macro F1':<10} | {'Esc Acc':<9} | {'False Auto-Handle':<18}")
-        print("-" * 90)
+        print("=" * 95)
+        print(f"{'System / Model':<30} | {'Intent Acc':<10} | {'Macro F1':<9} | {'Esc Acc':<8} | {'False Auto-Handle':<18}")
+        print("-" * 95)
         for r in csv_rows:
-            print(f"{r['Model']:<35} | {r['Intent Accuracy']:<11} | {r['Intent Macro F1']:<10} | {r['Escalation Accuracy']:<9} | {r['False Auto-Handles (Dangerous)']:<18}")
-        print("=" * 90)
+            print(f"{r['System']:<30} | {r['Intent Accuracy']:<10} | {r['Intent Macro F1']:<9} | {r['Decision Accuracy']:<8} | {r['False Auto-Handles (Critical Hazard)']:<18}")
+        print("=" * 95)
         
-        # Save detailed per-example predictions for Judge and Failure Analysis
+        # Generate evaluation/predictions.csv with all requested fields
+        pred_csv_rows = []
+        for i, row in self.golden_df.iterrows():
+            retrieved = agent_preds[i].get("retrieved_examples", [])
+            top_evidence = retrieved[0]["resolution"] if retrieved else ""
+            top_score = retrieved[0]["similarity"] if retrieved else 0.0
+            pred_csv_rows.append({
+                "customer_message": row["customer_message"],
+                "gold_intent": row.get("gold_intent", row["intent"]),
+                "predicted_intent": agent_intent_pred[i],
+                "intent_confidence": round(float(agent_preds[i].get("intent_confidence", 0.0)), 4),
+                "gold_decision": row.get("gold_decision", row.get("should_escalate")),
+                "predicted_decision": agent_esc_pred[i],
+                "generated_reply": agent_preds[i].get("reply", ""),
+                "retrieved_evidence": top_evidence,
+                "grounding_score": round(float(top_score), 4),
+                "decision_reason": agent_preds[i].get("decision_reason", "")
+            })
+        pred_csv_path = EVALUATION_DIR / "predictions.csv"
+        pd.DataFrame(pred_csv_rows).to_csv(pred_csv_path, index=False)
+        print(f"Saved per-example predictions to {pred_csv_path}")
+        
+        # Also save detailed JSON records for Judge and Failure Analysis
         pred_records = []
         for i, row in self.golden_df.iterrows():
             pred_records.append({
-                "id": int(row["id"]),
+                "id": int(row.get("id", i + 1)),
                 "customer_message": row["customer_message"],
-                "gold_intent": row["intent"],
+                "gold_intent": row.get("gold_intent", row["intent"]),
                 "pred_intent": agent_intent_pred[i],
-                "gold_escalate": row["should_escalate"],
+                "gold_escalate": row.get("gold_decision", row.get("should_escalate")),
                 "pred_escalate": agent_esc_pred[i],
-                "expected_resolution": row["expected_resolution"],
+                "expected_resolution": row.get("expected_resolution", ""),
                 "reply": agent_preds[i]["reply"],
                 "decision_reason": agent_preds[i]["decision_reason"],
                 "retrieved_examples": agent_preds[i]["retrieved_examples"]

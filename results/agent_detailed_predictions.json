@@ -7,7 +7,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Direct customer to check surroundings and provide carrier window before escalation.",
-    "reply": "We apologize for the delay with your delivery. We can take a closer look at the order. When you have time, give us a call. We're avail 24/7 here: the link in Your Orders",
+    "reply": "We apologize for the delay with your delivery. We can take a closer look at the order. When you have time, give us a call. We're avail 24/7 here: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.87) with verified grounded historical resolution (0.77) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -69,7 +69,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Urgent essential item requiring agent investigation with local dispatch.",
-    "reply": "We apologize for the delay with your delivery. I'm sorry your item is arriving later than expected. We'd like to confirm what's happened here: the link in Your Orders",
+    "reply": "We apologize for the delay with your delivery. I'm sorry your item is arriving later than expected. We'd like to confirm what's happened here: the support link in Your Orders",
     "decision_reason": "Time-sensitive essential delivery or false delivery confirmation requires dispatch investigation.",
     "retrieved_examples": [
       {
@@ -100,7 +100,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Provide carrier identification and tracking link.",
-    "reply": "We apologize for the delay with your delivery. Apologies for the delay, Shiva. Please report this to our support team here: the link in Your Orders & we'll look into this.",
+    "reply": "We apologize for the delay with your delivery. Apologies for the delay, Please report this to our support team here: the support link in Your Orders & we'll look into this.",
     "decision_reason": "High-confidence intent match (0.67) with verified grounded historical resolution (0.64) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -131,7 +131,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Potential misdelivery or theft requiring driver inquiry and claim filing.",
-    "reply": "We apologize for the delay with your delivery. We'd like to look into this with you. Please send us more details about this order here: the link in Your Orders",
+    "reply": "We apologize for the delay with your delivery. We'd like to look into this with you. Please send us more details about this order here: the support link in Your Orders",
     "decision_reason": "Time-sensitive essential delivery or false delivery confirmation requires dispatch investigation.",
     "retrieved_examples": [
       {
@@ -224,7 +224,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Confirm weather-related regional delays and revised delivery window.",
-    "reply": "We apologize for the delay with your delivery. Please don't provide your order details, as we consider it to be personal info. Our page is visible to the public. 2/2",
+    "reply": "We apologize for the delay with your delivery. Please don't provide your order details, as we consider it to be personal info. Our page is visible to the public.",
     "decision_reason": "High-confidence intent match (0.71) with verified grounded historical resolution (0.54) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -286,7 +286,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Reassure that out for delivery status remains active until end of route.",
-    "reply": "We apologize for the delay with your delivery. Don\u2019t provide your tracking details as its personal information. Our Twitter page is visible to public.(2/2)",
+    "reply": "We apologize for the delay with your delivery. Don\u2019t provide your tracking details as its personal information. Our Twitter page is visible to public.",
     "decision_reason": "High-confidence intent match (0.65) with verified grounded historical resolution (0.79) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -317,7 +317,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Courier handling complaint with potential damaged contents.",
-    "reply": "We apologize for the delay with your delivery. I'm sorry! Please check your replacement/refund options here: the link in Your Orders",
+    "reply": "We apologize for the delay with your delivery. I'm sorry! Please check your replacement/refund options here: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.30) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -348,7 +348,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Explain courier policy that in-transit address re-routing cannot be modified.",
-    "reply": "We apologize for the delay with your delivery. you can. However, it can be made only within the same city from the original address.",
+    "reply": "We apologize for the delay with your delivery. Yes, you can. However, it can be made only within the same city from the original address.",
     "decision_reason": "Intent classification confidence (0.44) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -410,7 +410,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Confirm Sunday delivery availability for Prime eligible zip codes.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Please don\u2019t provide your details as we consider them to be personal information. Our Twitter page is public. 2/2",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Please don\u2019t provide your details as we consider them to be personal information. Our Twitter page is public.",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.66) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -441,7 +441,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain that return to sender triggers an automatic refund or re-order upon scan.",
-    "reply": "We are very sorry to hear that your item arrived in that condition. if an item is damaged in transit we would normally send it back to the warehouse and provide you with a refund. 1/2",
+    "reply": "We are very sorry to hear that your item arrived in that condition. Hi, if an item is damaged in transit we would normally send it back to the warehouse and provide you with a refund.",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.54) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -503,7 +503,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Confirmed misdelivery to wrong address requiring driver dispatch check.",
-    "reply": "We take your feedback very seriously and apologize for this experience. Oh no! I'd like to have my team look into this. Please send us your details here: the link in Your Orders",
+    "reply": "We take your feedback very seriously and apologize for this experience. Oh no! I'd like to have my team look into this. Please send us your details here: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.35) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -534,7 +534,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain multi-warehouse fulfillment logistics and separate tracking.",
-    "reply": "We apologize for the delay with your delivery. Sorry to hear that, Shireen! Please get in touch with us so we can take a look at our options: the link in Your Orders",
+    "reply": "We apologize for the delay with your delivery. Sorry to hear that, Please get in touch with us so we can take a look at our options: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.51) with verified grounded historical resolution (0.66) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -627,7 +627,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Repeated missed delivery requiring depot escalation.",
-    "reply": "We apologize for the delay with your delivery. So sorry about your late order! Who was the carrier? You can find out here: the link in Your Orders",
+    "reply": "We apologize for the delay with your delivery. So sorry about your late order! Who was the carrier? You can find out here: the support link in Your Orders",
     "decision_reason": "Time-sensitive essential delivery or false delivery confirmation requires dispatch investigation.",
     "retrieved_examples": [
       {
@@ -689,7 +689,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "State standard 3-calendar-day locker pickup window before automatic return.",
-    "reply": "We apologize for the delay with your delivery. I'm sorry for the delay with the return pick up, call us here: the link in Your Orders & we'll fix this for you.",
+    "reply": "We apologize for the delay with your delivery. I'm sorry for the delay with the return pick up, call us here: the support link in Your Orders & we'll fix this for you.",
     "decision_reason": "High-confidence intent match (0.53) with verified grounded historical resolution (0.58) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -720,7 +720,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Explain that the 6-digit pickup code or barcode is sent via email and Amazon app.",
-    "reply": "We apologize for the delay with your delivery. It may be to far into the shipping process to change. Give us a call and we'll see what we can do. the link in Your Orders",
+    "reply": "We apologize for the delay with your delivery. It may be to far into the shipping process to change. Give us a call and we'll see what we can do. the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.33) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -751,7 +751,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "False delivery confirmation requiring carrier investigation.",
-    "reply": "We take your feedback very seriously and apologize for this experience. Sorry to hear this. Please get in touch hear if you'd like us to investigate this for you: the link in Your Orders",
+    "reply": "We take your feedback very seriously and apologize for this experience. Sorry to hear this. Please get in touch hear if you'd like us to investigate this for you: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.41) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -844,7 +844,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Clarify return policy guidelines regarding packaging and potential restocking terms.",
-    "reply": "We are glad to assist you with your return or refund. We're happy to help, Julie! When you have a chance, checkout available return options here: the link in Your Orders",
+    "reply": "We are glad to assist you with your return or refund. We're happy to help! When you have a chance, checkout available return options here: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.68) with verified grounded historical resolution (0.66) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -875,7 +875,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain that authorization holds on cancelled orders drop within 3-5 business days.",
-    "reply": "We are glad to assist you with your return or refund. I'm sorry about the experience, Kanz. Please provide your details here: the link in Your Orders We will look into it.",
+    "reply": "We are glad to assist you with your return or refund. I'm sorry about the experience. Please provide your details here: the support link in Your Orders We will look into it.",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.73) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -937,7 +937,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Warehouse return discrepancy requiring manual tracking reconciliation.",
-    "reply": "We are glad to assist you with your return or refund. get in touch with us here: the link in Your Orders so we can help you out.",
+    "reply": "We are glad to assist you with your return or refund. Hey, get in touch with us here: the support link in Your Orders so we can help you out.",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('same box by accident'): requires human account review.",
     "retrieved_examples": [
       {
@@ -968,7 +968,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain scheduled carrier pickup process for oversized/heavy items.",
-    "reply": "We are glad to assist you with your return or refund. I'd like to take a closer look into this, please share your details on the link here: the link in Your Orders We'll help!",
+    "reply": "We are glad to assist you with your return or refund. I'd like to take a closer look into this, please share your details on the link here: the support link in Your Orders We'll help!",
     "decision_reason": "High-confidence intent match (0.67) with verified grounded historical resolution (0.51) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -999,7 +999,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Guide user through the Gift Returns portal using the 17-digit order number.",
-    "reply": "We are glad to assist you with your return or refund. Items marked as gifts have a return window of 30 days. For more info about marking as gift - the link in Your Orders",
+    "reply": "We are glad to assist you with your return or refund. Items marked as gifts have a return window of 30 days. For more info about marking as gift - the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.68) with verified grounded historical resolution (0.69) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -1154,7 +1154,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Detail the extended holiday return policy window.",
-    "reply": "We are glad to assist you with your return or refund. Items marked as gifts have a return window of 30 days. For more info about marking as gift - the link in Your Orders",
+    "reply": "We are glad to assist you with your return or refund. Items marked as gifts have a return window of 30 days. For more info about marking as gift - the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.72) with verified grounded historical resolution (0.62) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -1216,7 +1216,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Explain fair return policy guidelines.",
-    "reply": "We are glad to assist you with your return or refund. Sorry to know your return hasn't been picked up yet. Kindly connect with us here: the link in Your Orders We'll help!",
+    "reply": "We are glad to assist you with your return or refund. Sorry to know your return hasn't been picked up yet. Kindly connect with us here: the support link in Your Orders We'll help!",
     "decision_reason": "Intent classification confidence (0.43) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -1247,7 +1247,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Exceeded standard refund processing SLA requiring manual refund issuance.",
-    "reply": "We are glad to assist you with your return or refund. We'd like to take a closer look at what's going on. When you have the time, please contact us here: the link in Your Orders",
+    "reply": "We are glad to assist you with your return or refund. We'd like to take a closer look at what's going on. When you have the time, please contact us here: the support link in Your Orders",
     "decision_reason": "Return policy exception or unresolved refund commitment requires human intervention.",
     "retrieved_examples": [
       {
@@ -1371,7 +1371,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Third-party seller dispute requiring Amazon A-to-z Guarantee claim filing.",
-    "reply": "We are glad to assist you with your return or refund. Sorry you haven't heard back from the seller, John! The next step would be to file a claim here: the link in Your Orders",
+    "reply": "We are glad to assist you with your return or refund. Sorry you haven't heard back from the seller! The next step would be to file a claim here: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.34) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -1402,7 +1402,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Clarify that return shipping is free for defective or incorrectly described products.",
-    "reply": "We are glad to assist you with your return or refund. what was your reason for returning your item? You can review our return shipping policy here: the link in Your Orders",
+    "reply": "We are glad to assist you with your return or refund. Hi, what was your reason for returning your item? You can review our return shipping policy here: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.69) with verified grounded historical resolution (0.76) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -1433,7 +1433,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Chargeback/re-billing dispute requiring proof of drop-off tracking verification.",
-    "reply": "We are glad to assist you with your return or refund. Oh no! Please reach us here: the link in Your Orders so we can look into this with you in real-time.",
+    "reply": "We are glad to assist you with your return or refund. Oh no! Please reach us here: the support link in Your Orders so we can look into this with you in real-time.",
     "decision_reason": "Intent classification confidence (0.36) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -1464,7 +1464,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Confirm return drop-off capability at participating Amazon Fresh locations.",
-    "reply": "We are glad to assist you with your return or refund. what error are you getting when you try to access our website?",
+    "reply": "We are glad to assist you with your return or refund. Hi, what error are you getting when you try to access our website?",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.55) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -1495,7 +1495,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Guide customer to Your Orders > Order Details > Refund Summary.",
-    "reply": "We are glad to assist you with your return or refund. I see that a correspondence is sent to you with the refund update. Please visit the link in Your Orders for the details.",
+    "reply": "We are glad to assist you with your return or refund. I see that a correspondence is sent to you with the refund update. Please visit the support link in Your Orders for the details.",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.59) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -1526,7 +1526,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Disputed refund deduction requiring billing review.",
-    "reply": "We are glad to assist you with your return or refund. please contact us via this link and select email at the bottom of the page: the link in Your Orders",
+    "reply": "We understand your concern regarding this charge. Please check Your Orders or contact an Amazon customer specialist with your order details so they can review the charges and help resolve the issue.",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('less than what i paid'): requires human account review.",
     "retrieved_examples": [
       {
@@ -1712,7 +1712,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Apologize and issue replacement/refund for spoiled items without requiring return of liquid mess.",
-    "reply": "We are very sorry to hear that your item arrived in that condition. That's unusual. We'd like to get this checked. Please fill in this form: the link in Your Orders and we'll revert shortly.",
+    "reply": "We are very sorry to hear that your item arrived in that condition. That's unusual. We'd like to get this checked. Please fill in this form: the support link in Your Orders and we'll revert shortly.",
     "decision_reason": "Intent classification confidence (0.34) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -1836,7 +1836,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Process hazardous material returnless refund per policy for liquids/flammables.",
-    "reply": "We apologize for the delay with your delivery. Hi Emma, sorry to see that, have you checked the options available here: http:the link in Your Orders",
+    "reply": "We apologize for the delay with your delivery. sorry to see that, have you checked the options available here: http:the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.23) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -1867,7 +1867,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "High value internal damage requiring warehouse serialization audit.",
-    "reply": "We are very sorry to hear that your item arrived in that condition. We appreciate this feedback. Please submit the order information to us: the link in Your Orders for our review.",
+    "reply": "We are very sorry to hear that your item arrived in that condition. We appreciate this feedback. Please submit the order information to us: the support link in Your Orders for our review.",
     "decision_reason": "Intent classification confidence (0.36) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -1991,7 +1991,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Facilitate return/replacement under 30-day return policy.",
-    "reply": "We are very sorry to hear that your item arrived in that condition. Can you please tell us which site you use? Is it the link in Your Orders .co.uk?",
+    "reply": "We are very sorry to hear that your item arrived in that condition. Can you please tell us which site you use? Is it the support link in Your Orders .co.uk?",
     "decision_reason": "Intent classification confidence (0.29) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2053,7 +2053,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Stolen or lost in transit contents requiring investigation and replacement.",
-    "reply": "We apologize for the delay with your delivery. I am sorry to hear this. Please reach out to us directly here: the link in Your Orders the link in Your Orders",
+    "reply": "We apologize for the delay with your delivery. Hello, I am sorry to hear this. Please reach out to us directly here: the support link in Your Orders the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.29) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2084,7 +2084,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Initiate replacement copy shipment.",
-    "reply": "We are very sorry to hear that your item arrived in that condition. Oh No! I am sorry to see. Have you been able to check replacement/return options here?: the link in Your Orders",
+    "reply": "We are very sorry to hear that your item arrived in that condition. Oh No! I am sorry to see. Have you been able to check replacement/return options here?: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.50) with verified grounded historical resolution (0.72) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -2146,7 +2146,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Process replacement for contaminated order.",
-    "reply": "We take your feedback very seriously and apologize for this experience. Sorry to know you received damaged item, we certainly did not expect this to happen. 1/2",
+    "reply": "We take your feedback very seriously and apologize for this experience. Sorry to know you received damaged item, we certainly did not expect this to happen.",
     "decision_reason": "Intent classification confidence (0.31) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2239,7 +2239,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Offer standard electronic troubleshooting steps or replacement.",
-    "reply": "We apologize for the trouble accessing your account. I'm so sorry about this. Please reach out to us by phone so we can explore our options: the link in Your Orders",
+    "reply": "We apologize for the trouble accessing your account. I'm so sorry about this. Please reach out to us by phone so we can explore our options: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.19) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2332,7 +2332,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Duplicate billing dispute requiring merchant ledger verification.",
-    "reply": "We understand your concern regarding this charge. Sorry about those charges, Will! Let's see if we can find out where they are coming from: the link in Your Orders",
+    "reply": "We understand your concern about being charged twice. Please check Your Orders or contact an Amazon customer specialist with your order details so they can review the charges and help resolve the issue.",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('charged twice'): requires human account review.",
     "retrieved_examples": [
       {
@@ -2363,7 +2363,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Provide instructions to verify billing address match and re-enter card details.",
-    "reply": "We understand your concern regarding this charge. I completely understand your disappointment. Kindly contact us here the link in Your Orders and we'll look into it.",
+    "reply": "We understand your concern regarding this charge. I completely understand your disappointment. Kindly contact us here the support link in Your Orders and we'll look into it.",
     "decision_reason": "High-confidence intent match (0.78) with verified grounded historical resolution (0.61) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -2394,7 +2394,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Suspected unauthorized fraudulent transaction requiring account audit.",
-    "reply": "We understand your concern regarding this charge. As you've written to our specialist team they'll reach out to you soon. Appreciate your patience and understanding.",
+    "reply": "We understand your concern regarding this unauthorized charge. Please check Your Orders or contact an Amazon customer specialist immediately with your account details so they can investigate the unauthorized activity and assist you.",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('unauthorized charge'): requires human account review.",
     "retrieved_examples": [
       {
@@ -2425,7 +2425,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Stolen or compromised gift card claim code requiring fraud investigation.",
-    "reply": "We understand your concern regarding this charge. Sorry about that, May I know if you contacted our support team here: the link in Your Orders",
+    "reply": "We understand your concern regarding this charge. Sorry about that, May I know if you contacted our support team here: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.61) with verified grounded historical resolution (0.69) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -2487,7 +2487,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Explain standard pre-authorization verification hold that automatically drops in a few days.",
-    "reply": "We apologize for the trouble accessing your account. Hi there, were you charged this amount with an Amazon Prime description? We'd be happy to help resolve this for you!",
+    "reply": "We apologize for the trouble accessing your account. were you charged this amount with an Amazon Prime description? We'd be happy to help resolve this for you!",
     "decision_reason": "Intent classification confidence (0.39) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2518,7 +2518,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Explain that Amazon allows split payment between Amazon Gift Card balance and one credit card.",
-    "reply": "We understand your concern regarding this charge. you can add them to your pay balance and then place the order.",
+    "reply": "We understand your concern regarding this charge. Hi, you can add them to your pay balance and then place the order.",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('two different credit cards'): requires human account review.",
     "retrieved_examples": [
       {
@@ -2549,7 +2549,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Clarify promotional terms (eligible items, sold by Amazon, expiration).",
-    "reply": "We understand your concern regarding this charge. Hi Steven- Do you have a link to the promotion so we can take a look for you? Thanks.",
+    "reply": "We understand your concern regarding this charge. - Do you have a link to the promotion so we can take a look for you? Thanks.",
     "decision_reason": "Intent classification confidence (0.46) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2611,7 +2611,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "State supported payment methods and explain lack of direct Apple/Google Pay in web cart.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Sorry for the inconvenience. Please refer our terms and conditions here: the link in Your Orders for further details.",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Sorry for the inconvenience. Please refer our terms and conditions here: the support link in Your Orders for further details.",
     "decision_reason": "Intent classification confidence (0.47) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2642,7 +2642,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain that gift card payments are refunded back to the Amazon Gift Card balance.",
-    "reply": "We are glad to assist you with your return or refund. please contact us via this link and select email at the bottom of the page: the link in Your Orders",
+    "reply": "We are glad to assist you with your return or refund. Hi, please contact us via this link and select email at the bottom of the page: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.68) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -2735,7 +2735,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Advise calling bank to authorize merchant, then clicking Retry Payment in Your Orders.",
-    "reply": "We are glad to assist you with your return or refund. If you've already shared the required details on the link provided earlier, you must have received an update from us. (1/2)",
+    "reply": "We are glad to assist you with your return or refund. If you've already shared the required details on the link provided earlier, you must have received an update from us.",
     "decision_reason": "Intent classification confidence (0.33) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2766,7 +2766,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Direct user to Your Orders > Printable Order Summary / Invoice link.",
-    "reply": "We are glad to assist you with your return or refund. Kindly contact us here: the link in Your Orders and we'll check this for you.",
+    "reply": "We are glad to assist you with your return or refund. Kindly contact us here: the support link in Your Orders and we'll check this for you.",
     "decision_reason": "Intent classification confidence (0.17) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2797,7 +2797,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Unidentified subscription dispute requiring subscription audit.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Strange - did you request a replacement - or was the order duplicated ? Pls check here: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Strange - did you request a replacement - or was the order duplicated ? Pls check here: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.57) with verified grounded historical resolution (0.60) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -2859,7 +2859,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Reward points sync failure requiring points reconciliation.",
-    "reply": "We understand your concern regarding this charge. We'd like to help, please respond to the latest correspondence you received from us and we'll reach out to you soon.",
+    "reply": "We understand your concern regarding this charge. Please check Your Orders or contact an Amazon customer specialist with your order details so they can review the charges and help resolve the issue.",
     "decision_reason": "Intent classification confidence (0.46) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2921,7 +2921,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Explain real-time price updates, estimated shipping additions, and dynamic tax.",
-    "reply": "We understand your concern regarding this charge. Hi Amy- Have you been able to get in touch via the above link so we can check this out for you?",
+    "reply": "We understand your concern regarding this charge. - Have you been able to get in touch via the above link so we can check this out for you?",
     "decision_reason": "Intent classification confidence (0.33) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -2983,7 +2983,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Customer grievance regarding authorization timing versus shipment billing.",
-    "reply": "We understand your concern regarding this charge. Sorry for the inconvenience. Please refer our terms and conditions here: the link in Your Orders for further details.",
+    "reply": "We understand your concern regarding this charge. Please check Your Orders or contact an Amazon customer specialist with your order details so they can review the charges and help resolve the issue.",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('overdraft'): requires human account review.",
     "retrieved_examples": [
       {
@@ -3045,7 +3045,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain that payment method can be changed in Your Orders if order hasn't entered dispatch.",
-    "reply": "We understand your concern regarding this charge. Once the order is placed we'll not be able to make any changes to the order. 1/2",
+    "reply": "We understand your concern regarding this charge. Once the order is placed we'll not be able to make any changes to the order.",
     "decision_reason": "High-confidence intent match (0.55) with verified grounded historical resolution (0.64) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -3076,7 +3076,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Promotional ledger audit requiring customer service adjustment.",
-    "reply": "We understand your concern regarding this charge. Terribly sorry for the inconvenience! Let's see if we have additional options for you: the link in Your Orders",
+    "reply": "We understand your concern regarding this charge. Terribly sorry for the inconvenience! Let's see if we have additional options for you: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.33) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -3107,7 +3107,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Advise checking Spam/Junk folders, whitelist Amazon domain, and try SMS reset.",
-    "reply": "We apologize for the trouble accessing your account. Sorry to hear that, can you tell us a bit more without sharing any personal or account info?",
+    "reply": "We apologize for the trouble accessing your account. Sorry to hear that, you tell us a bit more without sharing any personal or account info?",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.70) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -3138,7 +3138,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Account recovery lockout requiring identity verification document submission.",
-    "reply": "We apologize for the trouble accessing your account. I'm sorry for the trouble with your account! What site do you use with us? Is it the link in Your Orders co.uk or etc.?",
+    "reply": "We apologize for the trouble accessing your account. I'm sorry for the trouble with your account! What site do you use with us? Is it the support link in Your Orders co.uk or etc.?",
     "decision_reason": "High-confidence intent match (0.89) with verified grounded historical resolution (0.51) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -3169,7 +3169,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Active security breach requiring immediate account lockdown and password reset.",
-    "reply": "We apologize for the trouble accessing your account. I understand. We don't have access to customer accounts over Twitter. The link ^AM provided does not require sign in.",
+    "reply": "We apologize for the trouble accessing your account. I understand. We don't have access to customer accounts over Twitter. The link provided does not require sign in.",
     "decision_reason": "Intent classification confidence (0.42) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -3200,7 +3200,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Account specialist hold requiring secure portal document upload review.",
-    "reply": "We understand your concern regarding this charge. Sorry about the delay with a refund. Could you confirm providing your details as requested here: the link in Your Orders ?",
+    "reply": "We understand your concern regarding this charge. Sorry about the delay with a refund. Could you confirm providing your details as requested here: the support link in Your Orders ?",
     "decision_reason": "Intent classification confidence (0.41) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -3293,7 +3293,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Explain that accounts cannot be merged, but Family Library sharing can link benefits.",
-    "reply": "We apologize for the trouble accessing your account. your account will not be disabled if your registered email ID is deactivated. You can change your account email 1/2",
+    "reply": "We apologize for the trouble accessing your account. No, your account will not be disabled if your registered email ID is deactivated. You can change your account email",
     "decision_reason": "Intent classification confidence (0.45) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -3541,7 +3541,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Policy appeal requiring community trust & safety team review.",
-    "reply": "We apologize for the trouble accessing your account. I'd like a member of my team to look into this. Follow this link to send us your contact info: the link in Your Orders",
+    "reply": "We apologize for the trouble accessing your account. I'd like a member of my team to look into this. Follow this link to send us your contact info: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.28) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -3572,7 +3572,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Explain digital rights policy regarding non-transferability between accounts.",
-    "reply": "We apologize for the trouble accessing your account. you can return the Kindle book for a refund, you can find out how to here: the link in Your Orders",
+    "reply": "We apologize for the trouble accessing your account. Hi, you can return the Kindle book for a refund, you can find out how to here: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.25) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -3603,7 +3603,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Auth lock requiring manual identity verification.",
-    "reply": "We apologize for the trouble accessing your account. Whenever an account is put on hold, a correspondence is sent to the registered email id with the information and reason. (1/2)",
+    "reply": "We apologize for the trouble accessing your account. Whenever an account is put on hold, a correspondence is sent to the registered email id with the information and reason.",
     "decision_reason": "Account security verification or credential lockout requires identity verification.",
     "retrieved_examples": [
       {
@@ -3665,7 +3665,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain trusted device cookies and IP location verification safeguards.",
-    "reply": "We apologize for the trouble accessing your account. captcha entry is there merely to ensure that you're human and not a robot trying to login to an account.",
+    "reply": "We apologize for the trouble accessing your account. Yes, captcha entry is there merely to ensure that you're human and not a robot trying to login to an account.",
     "decision_reason": "High-confidence intent match (0.61) with verified grounded historical resolution (0.62) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -3727,7 +3727,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Provide link and instructions to register for Amazon Business.",
-    "reply": "We apologize for the trouble accessing your account. your account will not be disabled if your registered email ID is deactivated. You can change your account email 1/2",
+    "reply": "We apologize for the trouble accessing your account. No, your account will not be disabled if your registered email ID is deactivated. You can change your account email",
     "decision_reason": "Intent classification confidence (0.39) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -3758,7 +3758,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Suggest using the audio CAPTCHA option or switching browsers.",
-    "reply": "We apologize for the trouble accessing your account. captcha entry is there merely to ensure that you're human and not a robot trying to login to an account.",
+    "reply": "We apologize for the trouble accessing your account. Yes, captcha entry is there merely to ensure that you're human and not a robot trying to login to an account.",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.53) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -3789,7 +3789,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Guide user to Request Your Information page under Privacy Central.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. I'm sorry for the trouble w/ your account! We'd like to take a closer look into this with you here: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. I'm sorry for the trouble w/ your account! We'd like to take a closer look into this with you here: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.29) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -3820,7 +3820,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Unauthorized minor purchase requiring parental refund review.",
-    "reply": "Thank you for inquiring about this product. I'm sorry for the trouble! We'd like to assist with these issues directly, please reach us here: the link in Your Orders",
+    "reply": "Thank you for inquiring about this product. I'm sorry for the trouble! We'd like to assist with these issues directly, please reach us here: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.19) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -3882,7 +3882,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain auto-renewal policy and offer guide to cancel for full refund if benefits unused.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Hello Sri, we've responded to your DM.",
+    "reply": "We are happy to clarify your Amazon Prime membership details. we've responded to your DM.",
     "decision_reason": "High-confidence intent match (0.91) with verified grounded historical resolution (0.69) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -3913,7 +3913,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Provide instructions to End Membership under Manage Prime Membership.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Hey there, let's follow the steps on here so we can cancel your membership: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. let's follow the steps on here so we can cancel your membership: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.86) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -3944,7 +3944,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Direct customer to Prime Student verification page using .edu email.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. You can learn how to switch your Prime account to a Prime Student account here: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. You can learn how to switch your Prime account to a Prime Student account here: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.58) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -3975,7 +3975,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Troubleshoot Prime account matching between Amazon retail and Prime Video app.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Hi Harry- Is it a Free Trial you signed up for? Have you received an email since opting for Prime?",
+    "reply": "We are happy to clarify your Amazon Prime membership details. - Is it a Free Trial you signed up for? Have you received an email since opting for Prime?",
     "decision_reason": "High-confidence intent match (0.92) with verified grounded historical resolution (0.71) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4006,7 +4006,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain Amazon Household setup to share Prime shipping benefits.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Thanks for reaching out! Here are the benefits that are shareable through your Amazon Household: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Thanks for reaching out! Here are the benefits that are shareable through your Amazon Household: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.52) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4068,7 +4068,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Confirm automated full refund policy if zero Prime benefits used since renewal.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Oh no! You're welcome to cancel your Prime membership here: the link in Your Orders Then update the payment and sign up!",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Oh no! You're welcome to cancel your Prime membership here: the support link in Your Orders Then update the payment and sign up!",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.77) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4099,7 +4099,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain membership pause functionality in Manage Prime settings.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Hi Annabel- Might be best to speak with us directly and we can see what we can do for you: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. - Might be best to speak with us directly and we can see what we can do for you: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.61) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4130,7 +4130,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Clarify third-party Prime Video Channels require additional subscription fees.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. We offer HBO channel subscriptions. For more information, please visit: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. We offer HBO channel subscriptions. For more information, please visit: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.61) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4161,7 +4161,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Billing discrepancy on free trial promotion requiring agent refund.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Hey Jarad, check out here - the link in Your Orders to see can you cancel. Keep us posted.",
+    "reply": "We are happy to clarify your Amazon Prime membership details. check out here - the support link in Your Orders to see can you cancel. Keep us posted.",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('advertised as a free'): requires human account review.",
     "retrieved_examples": [
       {
@@ -4223,7 +4223,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain policy that Prime memberships require a valid credit/debit card on file.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Kindly get in touch with us here: the link in Your Orders and we\u2019ll be glad to help you.",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Kindly get in touch with us here: the support link in Your Orders and we\u2019ll be glad to help you.",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.67) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4254,7 +4254,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Provide link and steps to re-link Amazon and Twitch accounts in Prime Gaming.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Click here: the link in Your Orders hopefully this will help you out :)",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Click here: the support link in Your Orders hopefully this will help you out :)",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.61) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4285,7 +4285,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain updated Prime Video tier with ad-free option add-on.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Hi! In order to unsubscribe from marketing e-mails, please visit us here: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Hi! In order to unsubscribe from marketing e-mails, please visit us here: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.90) with verified grounded historical resolution (0.74) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4316,7 +4316,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Recurring billing error on cancelled account requiring ledger audit.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Hi Josh, did you receive an email confirming the cancellation? Can you see an option to cancel - the link in Your Orders ?",
+    "reply": "We are happy to clarify your Amazon Prime membership details. did you receive an email confirming the cancellation? Can you see an option to cancel - the support link in Your Orders ?",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('cancelled prime'): requires human account review.",
     "retrieved_examples": [
       {
@@ -4347,7 +4347,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Confirm ongoing Grubhub+ partnership benefit for active Prime members.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. you get access to Prime Music: the link in Your Orders but Amazon Music Unlimited is separate: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Hi, you get access to Prime Music: the support link in Your Orders but Amazon Music Unlimited is separate: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.62) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4378,7 +4378,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Guide customer through Amazon Teen logins under Household management.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. You'll need to provide proof of enrollment, and have a valid .edu e-mail address. Details here: the link in Your Orders",
+    "reply": "We are happy to clarify your Amazon Prime membership details. You'll need to provide proof of enrollment, and have a valid .edu e-mail address. Details here: the support link in Your Orders",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.65) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4502,7 +4502,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Duplicate subscription charge requiring account deduplication.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Very sorry to hear this.If you were charged twice, this must have occurred on different accounts. Have you reached out to us?",
+    "reply": "We understand your concern regarding this duplicate charge. Please check Your Orders or contact an Amazon customer specialist with your order details so they can review the charges and help resolve the issue.",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('double billed'): requires human account review.",
     "retrieved_examples": [
       {
@@ -4564,7 +4564,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Direct user to Give the Gift of Prime purchase page.",
-    "reply": "We are happy to clarify your Amazon Prime membership details. Unfortunately this isn't something we currently offer, Kiren.",
+    "reply": "We are happy to clarify your Amazon Prime membership details. Unfortunately this isn't something we currently offer.",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.66) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -4688,7 +4688,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Explain stock availability and suggest using 'Email Me When Available' feature.",
-    "reply": "Thank you for inquiring about this product. We'd like to take a look at this with you. Provide your phone number here: the link in Your Orders and select 'Call me now'",
+    "reply": "Thank you for inquiring about this product. We'd like to take a look at this with you. Provide your phone number here: the support link in Your Orders and select 'Call me now'",
     "decision_reason": "High-confidence intent match (0.88) with verified grounded historical resolution (0.55) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -5432,7 +5432,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Serious delivery misconduct complaint requiring logistics driver dispatch report.",
-    "reply": "We take your feedback very seriously and apologize for this experience. Hey Esha! My team would like to look into this with you. Please give us more details about this here: the link in Your Orders",
+    "reply": "We take your feedback very seriously and apologize for this experience. My team would like to look into this with you. Please give us more details about this here: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.48) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -5463,7 +5463,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Severe customer service failure requiring senior supervisory resolution.",
-    "reply": "We apologize for the trouble accessing your account. Please don\u2019t provide order details as we consider them to be personal info. Our Twitter page is visible to public. (2/2)",
+    "reply": "We apologize for the trouble accessing your account. Please don\u2019t provide order details as we consider them to be personal info. Our Twitter page is visible to public.",
     "decision_reason": "Intent classification confidence (0.24) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -5494,7 +5494,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Property damage claim requiring Amazon Logistics Claims department investigation.",
-    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry about this, Philippa! That's not how we want our deliveries handled! Please contact us here:the link in Your Orders",
+    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry about this! That's not how we want our deliveries handled! Please contact us here:the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.43) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -5525,7 +5525,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Agent conduct grievance requiring supervisor review and coaching audit.",
-    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry to hear that. Could you please tell me your concern so that I can assist you accordingly? (1/2)",
+    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry to hear that. Could you please tell me your concern so that I can assist you accordingly?",
     "decision_reason": "Severe service complaint or delivery misconduct requires supervisory review.",
     "retrieved_examples": [
       {
@@ -5556,7 +5556,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Legal escalation and protracted financial withholding requiring specialist team.",
-    "reply": "We understand your concern regarding this charge. To make sure this is resolved properly, please visit Your Orders or contact an Amazon customer specialist directly with your order details so we can investigate.",
+    "reply": "We understand your concern regarding this charge. Please check Your Orders or contact an Amazon customer specialist with your order details so they can review the charges and help resolve the issue.",
     "decision_reason": "Critical trigger identified ('attorney'): requires immediate safety or legal team review.",
     "retrieved_examples": [
       {
@@ -5649,7 +5649,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Acknowledge environmental feedback with empathy and log packaging feedback.",
-    "reply": "We take your feedback very seriously and apologize for this experience. We're always looking to improve! Please visit us here to submit packaging feedback: the link in Your Orders",
+    "reply": "We take your feedback very seriously and apologize for this experience. We're always looking to improve! Please visit us here to submit packaging feedback: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.28) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -5680,7 +5680,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "AUTO_HANDLE",
     "expected_resolution": "Quiet hours delivery violation requiring delivery time preference enforcement.",
-    "reply": "We apologize for the delay with your delivery. I'm sorry to hear about this! To submit carrier feedback, please contact us: the link in Your Orders We want to help!",
+    "reply": "We apologize for the delay with your delivery. I'm sorry to hear about this! To submit carrier feedback, please contact us: the support link in Your Orders We want to help!",
     "decision_reason": "High-confidence intent match (0.63) with verified grounded historical resolution (0.70) under standard self-service policy.",
     "retrieved_examples": [
       {
@@ -5742,7 +5742,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Severe trespassing/safety boundary breach requiring immediate security review.",
-    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry we missed you. Do you use our Unattended Delivery Preference options? Details here: the link in Your Orders",
+    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry we missed you. Do you use our Unattended Delivery Preference options? Details here: the support link in Your Orders",
     "decision_reason": "Severe service complaint or delivery misconduct requires supervisory review.",
     "retrieved_examples": [
       {
@@ -5804,7 +5804,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Log delivery discrepancy and coordinate redelivery within business hours.",
-    "reply": "We take your feedback very seriously and apologize for this experience. I'm so sorry to hear this, Matthew! Please reach out to us here: the link in Your Orders so we can take a closer look.",
+    "reply": "We take your feedback very seriously and apologize for this experience. I'm so sorry to hear this! Please reach out to us here: the support link in Your Orders so we can take a closer look.",
     "decision_reason": "Intent classification confidence (0.44) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -5866,7 +5866,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Courier misconduct complaint requiring local depot operations manager contact.",
-    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry we missed you. Do you use our Unattended Delivery Preference options? Details here: the link in Your Orders",
+    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry we missed you. Do you use our Unattended Delivery Preference options? Details here: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.41) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -5897,7 +5897,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Escalation request requiring personalized human resolution.",
-    "reply": "We take your feedback very seriously and apologize for this experience. We apologize for this. We\u2019d like to assist, please fill the form: the link in Your Orders so we could get this resolved.(1/2)",
+    "reply": "We take your feedback very seriously and apologize for this experience. We apologize for this. We\u2019d like to assist, please fill the form: the support link in Your Orders so we could get this resolved.",
     "decision_reason": "Severe service complaint or delivery misconduct requires supervisory review.",
     "retrieved_examples": [
       {
@@ -5928,7 +5928,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Unprofessional conduct complaint requiring driver discipline investigation.",
-    "reply": "We take your feedback very seriously and apologize for this experience. I'm really sorry to hear this! Who was the carrier for this shipment: the link in Your Orders",
+    "reply": "We take your feedback very seriously and apologize for this experience. I'm really sorry to hear this! Who was the carrier for this shipment: the support link in Your Orders",
     "decision_reason": "Intent classification confidence (0.36) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -5990,7 +5990,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Log technical feedback with web engineering team and offer troubleshooting.",
-    "reply": "We apologize for the delay with your delivery. Sorry about that. Kindly get in touch with us here: the link in Your Orders and we\u2019ll be glad to help you.",
+    "reply": "We apologize for the delay with your delivery. Sorry about that. Kindly get in touch with us here: the support link in Your Orders and we\u2019ll be glad to help you.",
     "decision_reason": "Intent classification confidence (0.26) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
@@ -6052,7 +6052,7 @@
     "gold_escalate": "AUTO_HANDLE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Acknowledge hazard and update driver placement instructions.",
-    "reply": "We take your feedback very seriously and apologize for this experience. We'd like to report this to Amazon Logistics. When you have a moment, please send us your details: the link in Your Orders",
+    "reply": "We take your feedback very seriously and apologize for this experience. We'd like to report this to Amazon Logistics. When you have a moment, please send us your details: the support link in Your Orders",
     "decision_reason": "Severe service complaint or delivery misconduct requires supervisory review.",
     "retrieved_examples": [
       {
@@ -6083,7 +6083,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Critical dispute regarding agent integrity and promised compensation.",
-    "reply": "We take your feedback very seriously and apologize for this experience. We would like to help . Please share your details with us here: the link in Your Orders We'll get in touch shortly.",
+    "reply": "We take your feedback very seriously and apologize for this experience. We would like to help . Please share your details with us here: the support link in Your Orders We'll get in touch shortly.",
     "decision_reason": "Financial ledger dispute or unfulfilled commitment trigger ('promised me a'): requires human account review.",
     "retrieved_examples": [
       {
@@ -6114,7 +6114,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Forgery allegation on signature-required delivery requiring courier security audit.",
-    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry about the trouble with the delivery. Have you reported this to our support team here: the link in Your Orders ?",
+    "reply": "We take your feedback very seriously and apologize for this experience. I'm sorry about the trouble with the delivery. Have you reported this to our support team here: the support link in Your Orders ?",
     "decision_reason": "Critical trigger identified ('forged'): requires immediate safety or legal team review.",
     "retrieved_examples": [
       {
@@ -6145,7 +6145,7 @@
     "gold_escalate": "ESCALATE",
     "pred_escalate": "ESCALATE",
     "expected_resolution": "Severe telephony hold escalation requiring priority callback.",
-    "reply": "We take your feedback very seriously and apologize for this experience. Sorry for the trouble. Kindly report this to our support team here:the link in Your Orders we'll look into it right away.",
+    "reply": "We take your feedback very seriously and apologize for this experience. Sorry for the trouble. Kindly report this to our support team here:the support link in Your Orders we'll look into it right away.",
     "decision_reason": "Intent classification confidence (0.33) is below operational safety threshold (0.50).",
     "retrieved_examples": [
       {
