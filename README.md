@@ -67,7 +67,7 @@ Incoming Customer Tweet
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Majority Baseline** | 12.50% | 0.0278 | 0.0156 | 0.1250 | 66.50% | 0.00% | 0.00% | 0.00% | 67 / 67 (100% hazard rate) |
 | **Simple ML Baseline (TF-IDF + LogReg)** | 44.50% | 0.4344 | 0.7487 | 0.4450 | 65.50% | 47.37% | 26.87% | 34.29% | 49 / 67 (73.1% hazard rate) |
-| **My AI Customer Support Agent** | **77.00%** | **0.7650** | **0.7759** | **0.7700** | **61.50%** | **46.21%** | **91.04%** | **61.31%** | **6 / 67 (8.96% hazard rate)** |
+| **My AI Customer Support Agent** | **77.00%** | **0.7650** | **0.7759** | **0.7700** | **61.50%** | **46.21%** | **91.04%** | **61.31%** | **50 / 67 (8.96% hazard rate)** |
 
 ### Comparative Analysis of All Three Systems
 1. **Majority Baseline**: Always predicts the most frequent training class (`delivery_delay_tracking`, which constitutes 87.8% of historical Twitter resolutions) and defaults to `AUTO_HANDLE`. On the balanced 8-class golden set (25 samples per class), it yields $25/200 = 12.50\%$ accuracy and Macro F1 of $0.0278$. Because it naively auto-handles every ticket, it misses **100% of required escalations (67 critical false auto-handles)**.
